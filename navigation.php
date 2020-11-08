@@ -10,8 +10,7 @@
   </div>
 
   <div class="menu" style="padding:0;">
-          <div class="nav_content">
-            <ul>
+            <ul class="menu_wraper">
               <?php
               wp_nav_menu(array(
                 'theme_location' => 'primary',
@@ -23,7 +22,6 @@
             );
             ?>
           </ul>
-        </div>
       </div>
 </nav>
 <div class="category-nav">
