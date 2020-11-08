@@ -50,6 +50,14 @@ z-index: 1000;
   top:0;
   z-index: 100;
 }
+.menu_sticker {
+  position: absolute;
+  left:0;
+  top: -100%;
+  width:100%;
+  margin-left: 0;
+  margin-right: 0;
+} 
 .animated-icon1{
   width: 35px;
   height: 20px;

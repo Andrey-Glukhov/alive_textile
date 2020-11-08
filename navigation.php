@@ -1,6 +1,6 @@
 <nav>
   <div class="container-fluid">
-    <div class="row">
+    <div class="row menu_sticker" >
       <div class="col-6 events_header">EVENTS</div>
       <div class="col-6 ongoing_header">ONGOING</div>
   </div>
