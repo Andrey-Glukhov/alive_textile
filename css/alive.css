@@ -207,16 +207,16 @@ timeline
   min-height: 100vh;
   height: 100%;
 }
-.events{
+.column_event{
   background-color: #e5ff80;
-}
-.ongoing{
+  }
+.column_ongoing{
   background-color: #D5C5B3;
-}
-.timeline_row{
+ }
+/* .timeline_row{
   min-height: 100vh;
   height: 100%;
-}
+} */
 /*--------------------------------------------------------------
 about
 --------------------------------------------------------------*/
