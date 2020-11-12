@@ -153,11 +153,20 @@ z-index: 1000;
 flex-direction: column;
 }
 .r_d{
-  margin: 5px 0;
+  position: absolute;
+  margin-left: auto;
+  margin-right: auto;
+  left: 0;
+  right: 0;
+  text-align: center;
   width: 50px;
   height: 50px;
   border-radius: 50px;
-  background-color: #D5C5B3;
+  background-color: blueviolet;   /* #D5C5B3; */
+  z-index: 2;
+}
+.blank {
+  height: 200vh;
 }
 li.menu-item>a{
   text-align: center;
@@ -212,6 +221,14 @@ timeline
   }
 .column_ongoing{
   background-color: #D5C5B3;
+ }
+ .column_event_background{
+  background-color: #e5ff80;
+  height: 50px;
+  }
+.column_ongoing_background{
+  background-color: #D5C5B3;
+  height: 50px;
  }
 /* .timeline_row{
   min-height: 100vh;

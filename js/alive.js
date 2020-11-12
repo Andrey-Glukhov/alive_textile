@@ -16,10 +16,33 @@ $(document).ready(function () {
      var tweenSet = gsap.fromTo('.menu_sticker', {top:'-150%'}, {top:0, duration: 0.5} );
      var scene = new ScrollMagic.Scene({
         triggerElement: ".timeline",
-        triggerHook: 0.1})
+        triggerHook: 0.4})
           .setTween(tweenSet)
 					.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
+     $('.r_d').each(function() {
+      scene = new ScrollMagic.Scene({
+        triggerElement: $(this)[0],
+        triggerHook: 0.3,
+        duration: '50px'})
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+        scene.on("start", function (event) {
+          if (event.scrollDirection !=="FORWARD") {
+            return;
+          }
+          $(this.triggerElement()).parent().siblings('.collapse').collapse('show');
+          console.log("Hit start point of scene.");
+        });
+        scene.on("leave", function (event) {
+          $(this.triggerElement()).parent().siblings('.collapse').collapse('hide');
+        //console.log("Hit leave point of scene." + event.scrollDirection);
+  
+      });
+      $(this).click(function() {
+        controller.scrollTo($(this)[0]);
+      });
+     });     
           
   }
 });

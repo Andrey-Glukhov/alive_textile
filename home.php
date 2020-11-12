@@ -34,8 +34,13 @@
     $cat = get_the_category();
    ?>
    <div class="col-12">
-      <div class="row">
-        <?php 
+   <div class="row">
+      <div class="r_d"></div>
+      <div class="col-6 column_event_background"></div>
+      <div class="col-6 column_ongoing_background"></div>
+    </div>
+    <div class="row collapse">
+         <?php 
           $event_type = get_field('event_type');
           //echo $event_type[0];
           if ($event_type[0] === "ongoing"):
@@ -61,5 +66,5 @@
 
 </section>
 
-
+<div class="col-6 blank"></div>
   <?php get_footer(); ?>
