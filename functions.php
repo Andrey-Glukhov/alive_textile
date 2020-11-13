@@ -20,15 +20,17 @@ add_theme_support('custom-header');
 add_theme_support('post-formats', array('aside', 'chat', 'gallery','link','image','quote','status','video'));
 add_theme_support('post-thumbnails');
 
-// add_filter('post_class','timeline_column_classes'); 
-// function timeline_column_classes( $classes ) { 
-//     global $wp_query; 
+setcookie(TEST_COOKIE, 'WP Cookie check', 0, COOKIEPATH, COOKIE_DOMAIN);
+if ( SITECOOKIEPATH != COOKIEPATH ) setcookie(TEST_COOKIE, 'WP Cookie check', 0, SITECOOKIEPATH, COOKIE_DOMAIN);
+
+// add_filter('post_class','timeline_column_classes');
+// function timeline_column_classes( $classes ) {
+//     global $wp_query;
 //     $current_post = $wp_query->current_post;
 //     $event_type = get_field("event_type", $current_post->ID);
-//     $classes[] = $event_type; 
-//     //if( $wp_query->current_post%2 == 0 ) $classes[] = 'column-post-left'; 
-//     return $classes; 
+//     $classes[] = $event_type;
+//     //if( $wp_query->current_post%2 == 0 ) $classes[] = 'column-post-left';
+//     return $classes;
 // }
 
 ?>
-

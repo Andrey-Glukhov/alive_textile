@@ -40,23 +40,27 @@
       <div class="col-6 column_ongoing_background"></div>
     </div>
     <div class="row collapse">
-         <?php 
+         <?php
           $event_type = get_field('event_type');
           //echo $event_type[0];
           if ($event_type[0] === "ongoing"):
             ?>
           <div class="col-6 column_event"></div>
             <div class="col-6 column_ongoing">
+							<div class="divider_ongong"></div>
+							<div class="ongoing_date"><p><?php the_field('event_date_text');?></p></div>
               <h2><?php the_title();?></h2>
-              <div><?php the_field('event_type');?></div>
+              <div class="ongoing_img"><img src="<?php the_field('timeline_image');?>"/></div>
             </div>
           <?php elseif ($event_type[0] === "event"):?>
           <div class="col-6 column_event">
+						<div class="divider_event"></div>
+						<div class="event_date"><p><?php the_field('event_date_text');?></p></div>
             <h2><?php the_title();?></h2>
-            <div><?php the_field('event_type');?></div>
+            <div class="event_img"><img src="<?php the_field('timeline_image');?>"/></div>
           </div>
           <div class="col-6 column_ongoing"></div>
-        <?php endif; ?>  
+        <?php endif; ?>
       </div>
     </div>
   <?php endwhile; ?>

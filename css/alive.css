@@ -156,13 +156,15 @@ flex-direction: column;
   position: absolute;
   margin-left: auto;
   margin-right: auto;
+  margin-top: 20px;
+  box-shadow: 2px 2px black;
   left: 0;
   right: 0;
   text-align: center;
-  width: 50px;
-  height: 50px;
-  border-radius: 50px;
-  background-color: blueviolet;   /* #D5C5B3; */
+  width: 15px;
+  height: 15px;
+  border-radius: 15px;
+  background-color: #ffffff;
   z-index: 2;
 }
 .blank {
@@ -207,6 +209,73 @@ home page
   font-family: 'Bitter', serif;
   font-style: italic;
   font-weight: 500;
+}
+.column_ongoing>h2{
+  font-family: 'Bitter', serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+.column_ongoing{
+  width:80%;
+}
+.column_event>h2{
+  font-family: 'Bitter', serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+.column_event{
+  text-align: end;
+  width:80%;
+}
+.divider_ongong{
+  height: 1.5px;
+  width: 80%;
+  background-color: #ffffff;
+}
+.divider_event{
+  height: 1.5px;
+  width: 80%;
+  text-align: end;
+  float: right;
+  background-color: #ffffff;
+}
+.ongoing_img>img{
+  width: 80%;
+  height: auto;
+  margin: 20px 0;
+}
+.event_img{
+  text-align: end;
+}
+.event_img>img{
+  width: 80%;
+  height: auto;
+  margin: 20px 0;
+}
+.ongoing_date>p{
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-family: 'Bitter', serif;
+  font-style: normal;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #e5ff80;
+}
+.event_date>p{
+  margin-bottom: 0;
+  margin-top: 20px;
+  font-family: 'Bitter', serif;
+  font-style: normal;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #D5C5B3;
+}
+.event_date{
+  text-align: end;
 }
 /*--------------------------------------------------------------
 timeline
