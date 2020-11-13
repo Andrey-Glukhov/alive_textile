@@ -28,11 +28,13 @@ $(document).ready(function () {
         .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
         scene.on("start", function (event) {
+          console.log("Hit start point of scene." + event.scrollDirection);
           if (event.scrollDirection !=="FORWARD") {
             return;
           }
+          $('.collapse').collapse('hide');
           $(this.triggerElement()).parent().siblings('.collapse').collapse('show');
-          console.log("Hit start point of scene.");
+          
         });
         scene.on("leave", function (event) {
           $(this.triggerElement()).parent().siblings('.collapse').collapse('hide');
