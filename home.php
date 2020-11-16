@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main data-barba="container" data-barba-namespace="home">
-<section class="alive_opener" id="opener_canvas">
+
 	<div class="page_transition"></div>
 
 	<div class="container-fluid devide_menu">
@@ -10,7 +10,7 @@
 		</div>
 	</div>
 
-	<section class="alive_opener">
+  <section class="alive_opener" id="opener_canvas">
 		<article>
 			<header class="website_title">
 				<h1>ALIVE<br>TEXTILES</h2>

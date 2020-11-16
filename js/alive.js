@@ -14,15 +14,23 @@ var pointColor = []//{posX:0, posY:0};
 var pointBlank = []//{posX:0, posY:0};
 var countPoint = 10000;
 var speed = 150;
+var img;
 //posX, posY;
+function preload() {
+  img = loadImage('http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/11/start.png'); // Load the image
+}
+
 
 function setup() {
   var clientHeight = document.getElementById('opener_canvas').clientHeight;
   var clientWidth = document.getElementById('opener_canvas').clientWidth;
-
+  
   var cnv = createCanvas(clientWidth, clientHeight);
   cnv.parent("opener_canvas");
   background(213, 197,179);
+  image(img, 0, 0);
+  // Displays the image at point (0, height/2) at half size
+ // image(img, 0, height / 2, img.width / 2, img.height / 2);
   smooth();
   noStroke();
   // pointColor.posX = width/2;
@@ -95,8 +103,8 @@ function draw() {
 
 function pageTransition(){
   var tl = gsap.timeline();
-  tl.to('.page_transition', {duration: .5, scaleY: 1})
-  tl.to('.page_transition', {duration: .5, scaleY: 0, delay: .1})
+  tl.to('.page_transition', {duration: 1.5, scaleX: 1, transformOrigin: "left"});
+  tl.to('.page_transition', {duration: 1.5, scaleX: 0, delay: .1, transformOrigin: "right"});
 };
 function contentAnimation(){
   var tl = gsap.timeline();
@@ -119,7 +127,7 @@ barba.init({
     async leave(data) {
     const done = this.async();
     pageTransition();
-    await page_delay(1500);
+    await page_delay(3000);
     done();
     },
     async enter(data) {
@@ -144,6 +152,7 @@ $(document).ready(function () {
   });
 
   if ($('.timeline').length) {
+   
      controller = new ScrollMagic.Controller();
      gsap.defaultOverwrite = false;
      var tweenSet = gsap.fromTo('.menu_sticker', {top:'-150%'}, {top:0, duration: 0.5} );
@@ -158,18 +167,13 @@ $(document).ready(function () {
       $(this).click(function() {
         $('.collapse').collapse('hide');
         $(this).parent().siblings('.collapse').collapse('show');
-        // if ($(this).parent().hasClass('circule')){
-        //   $('.collapse').collapse('hide');
-        //   $(this).parent().removeClass('circule');
-        //   $(this).parent().siblings('.collapse').collapse('show');
-        //
-        // }else{
-        //   $('.r_d').parent().addClass('circule');
-        //   $(this).parent().siblings('.collapse').collapse('hide');
-        // };
       });
      });
-
+     setTimeout(setBack, 3300);
   }
+  
 });
 
+function setBack () {
+  $('.alive_opener').css('background-color','inherit'); 
+}
