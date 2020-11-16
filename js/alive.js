@@ -93,10 +93,43 @@ function draw() {
   }
 }
 
+function pageTransition(){
+  var tl = gsap.timeline();
+  tl.to('.page_transition', {duration: .5, scaleY: 1})
+  tl.to('.page_transition', {duration: .5, scaleY: 0, delay: .1})
+};
+function contentAnimation(){
+  var tl = gsap.timeline();
+  tl.from('h2', {duration: 1.5, translateY: 50, opacity: 0})
+};
+
+function page_delay(n){
+  n = n || 2000;
+  return new Promise(done => {
+    setTimeout(()=>{
+      done();
+    }, n);
+  });
+};
 
 barba.init({
-    // ...
-  })
+  sync: true,
+  transitions: [{
+    name: 'page_transition',
+    async leave(data) {
+    const done = this.async();
+    pageTransition();
+    await page_delay(1500);
+    done();
+    },
+    async enter(data) {
+      contentAnimation();
+    },
+    async once(data) {
+      contentAnimation();
+    }
+  }]
+});
 
 $(document).ready(function () {
 
@@ -125,6 +158,15 @@ $(document).ready(function () {
       $(this).click(function() {
         $('.collapse').collapse('hide');
         $(this).parent().siblings('.collapse').collapse('show');
+        // if ($(this).parent().hasClass('circule')){
+        //   $('.collapse').collapse('hide');
+        //   $(this).parent().removeClass('circule');
+        //   $(this).parent().siblings('.collapse').collapse('show');
+        //
+        // }else{
+        //   $('.r_d').parent().addClass('circule');
+        //   $(this).parent().siblings('.collapse').collapse('hide');
+        // };
       });
      });
 
