@@ -1,10 +1,4 @@
 <nav>
-  <div class="container-fluid">
-    <div class="row menu_sticker" >
-      <div class="col-6 events_header">EVENTS</div>
-      <div class="col-6 ongoing_header">ONGOING</div>
-  </div>
-</div>
   <div class="menu-btn">
     <div class="animated-icon1"><span></span><span></span><span></span></div>
   </div>
