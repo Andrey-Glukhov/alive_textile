@@ -3,10 +3,14 @@
 *Template Name: Project Template
 */
 get_header(); ?>
-<?php if(have_posts() ) : while (have_posts() ) :the_post();?>
+<?php if(have_posts() ) : while (have_posts() ) :the_post();
+	$cat = get_the_category();?>
 <main data-barba="container" data-barba-namespace="single">
 <section class="container-fluid single_item <?php the_field('event_type');?>_color">
+<article class="row justify-content-center">
+  <div class="col-md-1 <?php echo $cat;?>-pict"></div>
 
+</article>
 <article class="row single_row justify-content-center">
       <div class="col-md-5 col-sm-10 single_<?php the_field('event_type');?>">
         <div class="<?php the_field('event_type');?>_date"><p><?php the_field('event_date_text');?></p></div>
