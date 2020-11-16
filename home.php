@@ -1,6 +1,6 @@
 <?php get_header(); ?>
 <main data-barba="container" data-barba-namespace="home">
-<section class="alive_opener">
+<section class="alive_opener" id="opener_canvas">
 
 		<article>
 			<header class="website_title">
