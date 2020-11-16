@@ -21,28 +21,30 @@ $(document).ready(function () {
 					.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
      $('.r_d').each(function() {
-      scene = new ScrollMagic.Scene({
-        triggerElement: $(this)[0],
-        triggerHook: 0.3,
-        duration: '50px'})
-        .addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
-        scene.on("start", function (event) {
-          console.log("Hit start point of scene." + event.scrollDirection);
-          if (event.scrollDirection !=="FORWARD") {
-            return;
-          }
-          $('.collapse').collapse('hide');
-          $(this.triggerElement()).parent().siblings('.collapse').collapse('show');
+      // scene = new ScrollMagic.Scene({
+      //   triggerElement: $(this)[0],
+      //   triggerHook: 0.3,
+      //   duration: '50px'})
+      //   .addIndicators() // add indicators (requires plugin)
+      //   .addTo(controller);
+      //   scene.on("start", function (event) {
+      //     console.log("Hit start point of scene." + event.scrollDirection);
+      //     if (event.scrollDirection !=="FORWARD") {
+      //       return;
+      //     }
+      //     $('.collapse').collapse('hide');
+      //     $(this.triggerElement()).parent().siblings('.collapse').collapse('show');
           
-        });
-        scene.on("leave", function (event) {
-          $(this.triggerElement()).parent().siblings('.collapse').collapse('hide');
-        //console.log("Hit leave point of scene." + event.scrollDirection);
+      //   });
+      //   scene.on("leave", function (event) {
+      //     $(this.triggerElement()).parent().siblings('.collapse').collapse('hide');
+      //   //console.log("Hit leave point of scene." + event.scrollDirection);
   
-      });
+      // });
       $(this).click(function() {
-        controller.scrollTo($(this)[0]);
+        //controller.scrollTo($(this)[0]);
+        $('.collapse').collapse('hide');
+        $(this).parent().siblings('.collapse').collapse('show');
       });
      });     
           
