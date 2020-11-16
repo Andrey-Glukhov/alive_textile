@@ -1,4 +1,8 @@
 var controller;
+barba.init({
+    // ...
+  })
+
 $(document).ready(function () {
 
   $('.menu-btn').on('click', function () {
@@ -10,6 +14,7 @@ $(document).ready(function () {
       $('.menu').addClass('active');
     };
   });
+
   if ($('.timeline').length) {
      controller = new ScrollMagic.Controller();
      gsap.defaultOverwrite = false;
@@ -37,12 +42,12 @@ $(document).ready(function () {
         scene.on("leave", function (event) {
           $(this.triggerElement()).parent().siblings('.collapse').collapse('hide');
         //console.log("Hit leave point of scene." + event.scrollDirection);
-  
+
       });
       $(this).click(function() {
         controller.scrollTo($(this)[0]);
       });
-     });     
-          
+     });
+
   }
 });

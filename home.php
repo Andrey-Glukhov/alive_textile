@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-
+<main data-barba="container" data-barba-namespace="home">
 <section class="alive_opener">
 
 		<article>
@@ -71,4 +71,5 @@
 </section>
 
 <div class="col-6 blank"></div>
+</main>
   <?php get_footer(); ?>

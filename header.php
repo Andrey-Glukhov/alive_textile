@@ -26,6 +26,8 @@
   <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.2.0/gsap.min.js"></script>
   <!-- ScrollMagic GreenSock Plugin -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/plugins/animation.gsap.js"></script>
+<!-- barba -->
+  <script src="https://cdn.jsdelivr.net/npm/@barba/core"></script>
 
   <?php wp_head(); ?>
 </head>
@@ -37,7 +39,7 @@ else:
   $moon_classes = array('no_alive_front_class');
 endif;
 ?>
-<body <?php body_class($mavis_classes); ?>>
+<body data-barba="wrapper" <?php body_class($mavis_classes); ?>>
   <header>
   <?php include (TEMPLATEPATH . '/navigation.php'); ?>
 	</header>
