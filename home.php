@@ -1,8 +1,6 @@
 <?php get_header(); ?>
+<div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="home">
-
-	<div class="page_transition"></div>
-
 	<div class="container-fluid devide_menu">
 		<div class="row menu_sticker" >
 			<div class="col-6 events_header">EVENTS</div>

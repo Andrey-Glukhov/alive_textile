@@ -5,6 +5,9 @@ function alive_script_enqueue(){
 //js
   wp_enqueue_script('jquery');
   wp_enqueue_script( 'alive-js', get_template_directory_uri() . '/js/alive.js', array('jquery'), '1.0.0', true );
+  if (is_home()) {
+    wp_enqueue_script( 'play-canvas', get_template_directory_uri() . '/js/play-canvas.js', array(), '1.0.0', true );
+  }
 
 }
 add_action( 'wp_enqueue_scripts', 'alive_script_enqueue' );
