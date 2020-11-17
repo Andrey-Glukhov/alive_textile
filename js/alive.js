@@ -1,6 +1,6 @@
 var controller;
 var NORTH = 0;
-var NORTHEAST = 1; 
+var NORTHEAST = 1;
 var EAST = 2;
 var SOUTHEAST = 3;
 var SOUTH = 4;
@@ -24,7 +24,7 @@ function preload() {
 function setup() {
   var clientHeight = document.getElementById('opener_canvas').clientHeight;
   var clientWidth = document.getElementById('opener_canvas').clientWidth;
-  
+
   var cnv = createCanvas(clientWidth, clientHeight);
   cnv.parent("opener_canvas");
   background(213, 197,179);
@@ -46,16 +46,16 @@ function getPosition(pointArg) {
   var pointResult = {posX:pointArg.posX, posY:pointArg.posY};
   var direction = int(random(0, 8));
 
-    if (direction == NORTH) {  
-      pointResult.posY -= stepSize;  
-    } 
+    if (direction == NORTH) {
+      pointResult.posY -= stepSize;
+    }
     else if (direction == NORTHEAST) {
       pointResult.posX += stepSize;
       pointResult.posY -= stepSize;
-    } 
+    }
     else if (direction == EAST) {
       pointResult.posX += stepSize;
-    } 
+    }
     else if (direction == SOUTHEAST) {
       pointResult.posX += stepSize;
       pointResult.posY += stepSize;
@@ -124,16 +124,16 @@ barba.init({
   sync: true,
   transitions: [{
     name: 'page_transition',
-    async leave(data) {
-    const done = this.async();
+     leave(data) {
+    //const done = this.async();
     pageTransition();
-    await page_delay(3000);
+    //await page_delay(3000);
     done();
     },
-    async enter(data) {
+     enter(data) {
       contentAnimation();
     },
-    async once(data) {
+     once(data) {
       contentAnimation();
     }
   }]
@@ -152,7 +152,7 @@ $(document).ready(function () {
   });
 
   if ($('.timeline').length) {
-   
+
      controller = new ScrollMagic.Controller();
      gsap.defaultOverwrite = false;
      var tweenSet = gsap.fromTo('.menu_sticker', {top:'-150%'}, {top:0, duration: 0.5} );
@@ -163,7 +163,7 @@ $(document).ready(function () {
 					.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
      $('.r_d').each(function() {
-      
+
       $(this).click(function() {
         $('.collapse').collapse('hide');
         $(this).parent().siblings('.collapse').collapse('show');
@@ -171,9 +171,9 @@ $(document).ready(function () {
      });
      setTimeout(setBack, 3300);
   }
-  
+
 });
 
 function setBack () {
-  $('.alive_opener').css('background-color','inherit'); 
+  $('.alive_opener').css('background-color','inherit');
 }
