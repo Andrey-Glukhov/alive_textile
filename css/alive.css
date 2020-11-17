@@ -44,7 +44,7 @@ z-index: 1000;
   font-family: 'Bitter', serif;
   font-weight: 400;
   font-size: 2rem;
-  color:#D5C5B3;
+  color:#ffffff;
   background-color: rgb(196, 255, 0);
 }
 .ongoing_header{
@@ -239,13 +239,7 @@ home page
   font-weight: 500;
   color: #ffffff;
 }
-.single_ongoing>h2{
-  font-family: 'Bitter', serif;
-  font-style: normal;
-  font-size: 2rem;
-  font-weight: 500;
-  color: #ffffff;
-}
+
 .column_ongoing>a{
   cursor: pointer;
   text-decoration: none;
@@ -328,9 +322,6 @@ canvas {
   z-index: -3;
 }
 
-.ongoing_color{
-  background-color: #D5C5B3;
-}
 .page_transition{
   position: fixed;
   width: 100%;
@@ -388,6 +379,114 @@ timeline
 .secure_ongoing_background{
   background-color: #D5C5B3;
   height: 100%;
+}
+/*--------------------------------------------------------------
+single_project
+--------------------------------------------------------------*/
+.single_item{
+min-height: 100vh;
+height: 100%;
+}
+.single_item_header{
+  padding-top: 15px;
+}
+.ongoing_color{
+  background-color: #D5C5B3;
+}
+.event_color{
+  background-color:rgb(196, 255, 0);
+}
+.changing-pict{
+  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/11/exhibition_1.png);
+  height: 60px;
+  width: 100%;
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+.arrow-pict>a>img{
+  height: 40px;
+  width: auto;
+}
+.arrow-pict>a{
+  cursor: pointer;
+}
+.single_event_type{
+  border-bottom: solid #ffffff 2px;
+  height: fit-content;
+}
+.single_event_type>h2{
+  text-align: left;
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+    font-size: 2rem;
+    color: #ffffff;
+  text-transform: uppercase;
+margin-bottom: 0;
+}
+.single_ongoing_type{
+  border-bottom: solid #ffffff 2px;
+  height: fit-content;
+}
+.single_ongoing_type>h2{
+  text-align: left;
+    font-family: 'Bitter', serif;
+    font-weight: 400;
+    font-size: 2rem;
+    color: rgb(196, 255, 0);
+  text-transform: uppercase;
+margin-bottom: 0;
+}
+.single_ongoing_img>img{
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+.single_event_img>img{
+  width: 100%;
+  height: auto;
+  margin: 20px 0;
+}
+.fluid_content{
+  padding: 60px 0;
+}
+.single_short_desc{
+  text-align: left;
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  font-size: 1rem;
+}
+.single_event_date>p{
+  margin-bottom: 0;
+      margin-top: 20px;
+      font-family: 'Bitter', serif;
+      font-style: normal;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: #D5C5B3;
+}
+.single_ongoing_date>p{
+  margin-bottom: 0;
+      margin-top: 20px;
+      font-family: 'Bitter', serif;
+      font-style: normal;
+      font-size: 1.2rem;
+      font-weight: 500;
+      color: rgb(196, 255, 0);;
+}
+.single_ongoing>h2{
+  font-family: 'Bitter', serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
+}
+.single_event>h2{
+  font-family: 'Bitter', serif;
+  font-style: normal;
+  font-size: 2rem;
+  font-weight: 500;
+  color: #ffffff;
 }
 /*--------------------------------------------------------------
 about
