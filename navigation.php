@@ -18,10 +18,4 @@
           </ul>
       </div>
 </nav>
-<!-- <div class="category-nav">
-<div class="r_d"></div>
-<div class="r_d"></div>
-<div class="r_d"></div>
-<div class="r_d"></div>
-<div class="r_d"></div> -->
-</div>
+
