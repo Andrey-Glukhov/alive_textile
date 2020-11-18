@@ -3,9 +3,11 @@
 *Template Name: Project Template
 */
 get_header(); ?>
+
+<main data-barba="container" data-barba-namespace="single">
+
 <?php if(have_posts() ) : while (have_posts() ) :the_post();
 	$cat = get_the_category();?>
-<main data-barba="container" data-barba-namespace="single">
 <section class="container-fluid single_item <?php the_field('event_type');?>_color">
 <article class="row justify-content-center single_item_header">
   <div class="col-md-1 arrow-pict"><a href="http://localhost:8888/alive_textile/wordpress/"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/11/arrow-01.png"/></a></div>
@@ -47,7 +49,6 @@ get_header(); ?>
   <?php the_content();?>
 </article>
 </section>
-</main>
 <?php endwhile; ?>
 <?php endif; ?>
 <?php get_footer(); ?>

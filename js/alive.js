@@ -20,37 +20,33 @@ function page_delay(n){
 };
 
 barba.init({
-  //debug: true,
-  //logLevel: 'debug',
-  //sync: true,
   transitions: [{
     name: 'page_transition',
      leave(data) {
     const done = this.async();
     pageTransition();
-    // data.current.container.style.display = 'none';
-     setTimeout(function() {
+    setTimeout(function() {
        done();
      }, 1600);
-    //await page_delay(3000);
-    //done();
     },
      after(data) {
+
       const done = this.async();
       contentAnimation();
      setTimeout(function() {
        done();
      }, 1600);
+    initScipt();
+    initP5();
+
     },
      once(data) {
       contentAnimation();
     }
   }]
 });
-
-$(document).ready(function () {
-
-  $('.menu-btn').on('click', function () {
+function initScipt() {
+   $('.menu-btn').on('click', function () {
     if ($('.animated-icon1').hasClass('open')) {
       $('.animated-icon1').removeClass('open');
       $('.menu').removeClass('active');
@@ -69,13 +65,23 @@ $(document).ready(function () {
         triggerElement: ".timeline",
         triggerHook: 0.4})
           .setTween(tweenSet)
-					.addIndicators() // add indicators (requires plugin)
+					//.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
      $('.r_d').each(function() {
-
-      $(this).click(function() {
+      $(this).click(function(evt) {
         $('.collapse').collapse('hide');
-        $(this).parent().siblings('.collapse').collapse('show');
+        var circle = evt.target;
+        $(circle).parent().siblings('.collapse').collapse('show');
+        $(circle).parent().siblings('.collapse').children('.column_event');
+        // var collapseHeight = $(circle).parent().siblings('.collapsing').children('.column_event').height();
+        // var collapseWidth = $(circle).parent().siblings('.collapsing').children('.column_event').width();
+        // console.log('---' + collapseHeight + '--- ' + collapseWidth);
+        // console.log($(circle).parent().siblings());
+        // var cnvasObj = document.querySelector('#opener_canvas canvas');
+        // var dataURL = cnvasObj.toDataURL('image/jpg', 0.2,{left: 0, top: 0, width: collapseWidth, height: collapseHeight}); // ,{left: 0, top: 0, width: collapseWidth, height: collapseHeight}
+        // console.log(dataURL);
+        // var imageElement = $(circle).parent().siblings('.collapsing').find('img')[0];  
+        // imageElement.src = dataURL; 
       });
      });
      setTimeout(setBack, 3300);
@@ -83,28 +89,19 @@ $(document).ready(function () {
     var tooltipElem;
     document.onmouseover = function(event) {
       var target = event.target;
-
-      // если у нас есть подсказка...
       var tooltipHtml = target.dataset.tooltip;
       if (!tooltipHtml) return;
-
-      // ...создадим элемент для подсказки
-
       tooltipElem = document.createElement('div');
       tooltipElem.className = 'tooltip_r_d';
       tooltipElem.innerHTML = tooltipHtml;
       document.body.append(tooltipElem);
-
-      // спозиционируем его сверху от аннотируемого элемента (top-center)
       var coords = target.getBoundingClientRect();
       var left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
-      if (left < 0) left = 0; // не заезжать за левый край окна
-
+      if (left < 0) left = 0; 
       var top = coords.top - tooltipElem.offsetHeight - 5;
-      if (top < 0) { // если подсказка не помещается сверху, то отображать её снизу
+      if (top < 0) { 
         top = coords.top + target.offsetHeight + 5;
       }
-
       tooltipElem.style.left = left + 'px';
       tooltipElem.style.top = top + 'px';
     };
@@ -115,9 +112,29 @@ $(document).ready(function () {
         tooltipElem = null;
       }
     };
+    $(window).resize(function() {
+      initP5()
+    });
   }
+
+}
+$(document).ready(function () {
+  initScipt();
+  
 });
 
 function setBack () {
   $('.alive_opener').css('background-color','inherit');
+}
+function initP5() {
+  if ($('.timeline').length) {
+    if (window.myp5Object !== undefined && window.aliveSketch !== undefined) {
+      delete  window.myp5Object;
+      
+    }
+    window.myp5Object = new p5(aliveSketch);
+  } else {
+    delete  window.myp5Object;
+  }
+
 }
