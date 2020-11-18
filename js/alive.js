@@ -69,7 +69,7 @@ $(document).ready(function () {
         triggerElement: ".timeline",
         triggerHook: 0.4})
           .setTween(tweenSet)
-					.addIndicators() // add indicators (requires plugin)
+				//	.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
      $('.r_d').each(function() {
 
@@ -79,7 +79,7 @@ $(document).ready(function () {
       });
      });
      setTimeout(setBack, 3300);
-  
+
     var tooltipElem;
     document.onmouseover = function(event) {
       var target = event.target;
