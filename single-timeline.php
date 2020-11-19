@@ -7,12 +7,16 @@ get_header(); ?>
 <main data-barba="container" data-barba-namespace="single">
 
 <?php if(have_posts() ) : while (have_posts() ) :the_post();
-	$cat = get_the_category();?>
+	$cat = get_the_category();
+	if (count($cat) <=0 ) {
+		$cat = array('no_cat');
+				}
+		?>
 <section class="container-fluid single_item <?php the_field('event_type');?>_color">
 <article class="row justify-content-center single_item_header">
   <div class="col-md-1 arrow-pict"><a href="http://localhost:8888/alive_textile/wordpress/"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/arrow-01.png"/></a></div>
   <div class="col-md-4 single_<?php the_field('event_type');?>_type"><h2><?php the_field('event_type');?></h2></div>
-  <div class="col-md-1 changing-pict"></div>
+  <div class="col-md-1 <?php echo $cat[0]->name;?>-pict"></div>
   <div class="col-md-4"></div>
   <div class="col-md-1"></div>
 </article>

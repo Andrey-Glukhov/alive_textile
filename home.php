@@ -3,8 +3,8 @@
 <main data-barba="container" data-barba-namespace="home">
 	<div class="container-fluid devide_menu">
 		<div class="row menu_sticker" >
-			<div class="col-6 events_header">EVENTS</div>
-			<div class="col-6 ongoing_header">ONGOING</div>
+			<div class="col-6 events_header">ONGOING</div>
+			<div class="col-6 ongoing_header">EVENTS</div>
 		</div>
 	</div>
 	<div class="evet_category">
@@ -35,7 +35,7 @@
 				<?php $args = array(
 					'post_type' => 'timeline',
 					'post_status' => 'publish',
-					'order' => 'ASC',
+					'order' => 'DESC',
 					'orderby' => 'meta_value',
 					'posts_per_page' => -1,
 					'meta_query' => array(
@@ -53,10 +53,12 @@
 				if($event->have_posts() ) : while ( $event->have_posts() ) : $event->the_post();
 				$cat = get_the_category();
 				if (count($cat) <=0 ) {
-					$cat = array('no_cat');
-				}
+						$catname = 'no_cat';
+					} else {
+						$catname = $cat[0]->name;
+					}
 				?>
-				<div class="col-12 timeline_item" data-category="<?php echo $cat[0]->name; ?>">
+				<div class="col-12 timeline_item" data-category="<?php echo $catname;?>">
 					<div class="row">
 						<div class="r_d" data-tooltip="<?php the_field('event_date_text');?>"></div>
 						<div class="col-6 column_event_background"></div>
@@ -66,7 +68,7 @@
 						<?php
 						$event_type = get_field('event_type');
 						//echo $event_type[0];
-						if ($event_type[0] === "ongoing"):
+						if ($event_type[0] === "event"):
 							?>
 							<div class="col-6 column_event"></div>
 							<div class="col-6 column_ongoing">
@@ -77,7 +79,7 @@
 									<div class="ongoing_img"><img src="<?php the_field('timeline_image');?>"/></div>
 								</a>
 							</div>
-						<?php elseif ($event_type[0] === "event"):?>
+						<?php elseif ($event_type[0] === "ongoing"):?>
 							<div class="col-6 column_event">
 								<a href="<?php the_permalink();?>">
 									<div class="divider_event"></div>
