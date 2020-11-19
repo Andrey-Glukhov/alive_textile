@@ -337,7 +337,7 @@ canvas {
 .evet_category{
   position: fixed;
     top: 60px;
-    left: 15px;
+    left: -150px;
     display: flex;
     flex-direction: column;
     z-index: 10;
