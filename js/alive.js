@@ -116,9 +116,14 @@ function initScipt() {
     $(window).resize(function() {
       initP5()
     });
-    // Categories  
+    // Categories 
+    var scene_cat = new ScrollMagic.Scene({
+      triggerElement: ".timeline",
+      triggerHook: 0.3})
+        .setTween(gsap.fromTo('.evet_category', {left:'-150px'}, {left: "15px", duration: 0.5} ))
+        //.addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
     $('.category_column').children().click(function() {
-      console.log(this);
       if  ($(this).data('press') ==='yes') {
         $(this).data('press', 'no');
         $(this).css('background-position', 'top');
@@ -132,9 +137,7 @@ function initScipt() {
           catArray.push( $(this).data('category'));
         }
       });
-      console.log(catArray);
       $('.timeline_item').each(function() {
-        console.log($(this));
         if (catArray.length <= 0) { 
           $(this).removeClass('item_hide');
         } else {

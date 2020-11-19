@@ -53,12 +53,12 @@
 				if($event->have_posts() ) : while ( $event->have_posts() ) : $event->the_post();
 				$cat = get_the_category();
 				if (count($cat) <=0 ) {
-						$catname = 'no_cat';
-					} else {
-						$catname = $cat[0]->name;
-					}
+					$catname = 'no_cat';
+				} else {
+					$catname = $cat[0]->name;
+				}
 				?>
-				<div class="col-12 timeline_item" data-category="<?php echo $catname;?>">
+				<div class="col-12 timeline_item" data-category="<?php echo $catname; ?>">
 					<div class="row">
 						<div class="r_d" data-tooltip="<?php the_field('event_date_text');?>"></div>
 						<div class="col-6 column_event_background"></div>
