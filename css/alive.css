@@ -66,7 +66,7 @@ z-index: 1000;
 
 .menu{
   height: 100%;
-  width: 30vw;
+  width: 25vw;
   top: 0;
   right: 0;
   position: fixed;
@@ -180,7 +180,6 @@ flex-direction: column;
   margin-left: auto;
   margin-right: auto;
   margin-top: 20px;
-  box-shadow: 2px 2px black;
   left: 0;
   right: 0;
   text-align: center;
@@ -211,7 +210,6 @@ li.menu-item{
 }
 #menu-menu-1{
   width: 100%;
-
 }
 /*--------------------------------------------------------------
 home page
@@ -335,6 +333,51 @@ canvas {
   transform: scaleX(0);
   background-color:rgb(196, 255, 0);
   /*background-color: #e5ff80;*/
+}
+.evet_category{
+  position: fixed;
+    top: 60px;
+    left: 15px;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+.r_d_icon, .museum_icon, .exhibition_icon, .prototype_icon, .public_icon{
+  height: 50px;
+  width: 50px;
+  margin: 10px 0;
+}
+
+.r_d_icon{
+  background-image: url(../img/r_d.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.museum_icon{
+  background-image: url(../img/virtual_museum.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.exhibition_icon{
+  background-image: url(../img/exhibition.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.prototype_icon{
+  background-image: url(../img/prototype.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.public_icon{
+  background-image: url(../img/public_event.png);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 /*--------------------------------------------------------------
 timeline
@@ -516,23 +559,30 @@ publications
 
 /*xs*/
 @media only screen and (max-width: 576px) {
-
+  .menu{
+    width: 100vw;
+  }
 
 }
 /*sm*/
 @media screen and (min-width: 576px) and (max-width: 768px) {
-
-
+  .menu{
+    width: 75vw;
+  }
 
 }
 /*md*/
 @media screen and (min-width: 768px) and (max-width: 992px){
-
+  .menu{
+    width: 50vw;
+  }
 
 }
 
 /*lg*/
 @media screen and (min-width: 992px)  {
-
+  .menu{
+    width: 25vw;
+  }
 
 }

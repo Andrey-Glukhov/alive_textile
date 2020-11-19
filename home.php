@@ -7,6 +7,15 @@
 			<div class="col-6 ongoing_header">ONGOING</div>
 		</div>
 	</div>
+	<div class="evet_category">
+		<div class="category_column" >
+			<div class="r_d_icon"></div>
+			<div class="museum_icon"></div>
+			<div class="exhibition_icon"></div>
+			<div class="prototype_icon"></div>
+			<div class="public_icon"></div>
+		</div>
+	</div>
 
   <section class="alive_opener" id="opener_canvas">
 		<article>
@@ -85,5 +94,3 @@
 
 </section>
 <?php get_footer(); ?>
-
-
