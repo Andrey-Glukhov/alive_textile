@@ -439,10 +439,11 @@ height: 100%;
   padding-top: 15px;
 }
 .ongoing_color{
-  background-color: #D5C5B3;
+  background-color:rgb(196, 255, 0);
+
 }
 .event_color{
-  background-color:rgb(196, 255, 0);
+  background-color: #D5C5B3;
 }
 .exhibition-pict{
   background-image: url(../img/exhibition.png);
@@ -504,7 +505,7 @@ height: 100%;
     font-family: 'Bitter', serif;
     font-weight: 400;
     font-size: 2rem;
-    color: #ffffff;
+    color: rgb(196, 255, 0);
   text-transform: uppercase;
 margin-bottom: 0;
 }
@@ -517,7 +518,7 @@ margin-bottom: 0;
     font-family: 'Bitter', serif;
     font-weight: 400;
     font-size: 2rem;
-    color: rgb(196, 255, 0);
+    color: #ffffff;
   text-transform: uppercase;
 margin-bottom: 0;
 }
@@ -547,7 +548,7 @@ margin-bottom: 0;
       font-style: normal;
       font-size: 1.2rem;
       font-weight: 500;
-      color: #D5C5B3;
+      color: rgb(196, 255, 0);
 }
 .single_ongoing_date>p{
   margin-bottom: 0;
@@ -556,7 +557,7 @@ margin-bottom: 0;
       font-style: normal;
       font-size: 1.2rem;
       font-weight: 500;
-      color: rgb(196, 255, 0);;
+      color: #D5C5B3;
 }
 .single_ongoing>h2{
   font-family: 'Bitter', serif;
