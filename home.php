@@ -9,7 +9,7 @@
 	</div>
 	<div class="evet_category">
 		<div class="category_column" >
-			<div class="r_d_icon" data-category="r&d" data-press="no"></div>
+			<div class="r_d_icon" data-category="r_d" data-press="no"></div>
 			<div class="museum_icon" data-category="virtual museum" data-press="no"></div>
 			<div class="exhibition_icon" data-category="exhibition" data-press="no"></div>
 			<div class="prototype_icon" data-category="prototype" data-press="no"></div>
