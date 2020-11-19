@@ -46,16 +46,16 @@ barba.init({
   }]
 });
 function initScipt() {
-   $('.menu-btn').on('click', function () {
-    if ($('.animated-icon1').hasClass('open')) {
-      $('.animated-icon1').removeClass('open');
-      $('.menu').removeClass('active');
-    }else{
-      $('.animated-icon1').addClass('open');
-      $('.menu').addClass('active');
-    };
-  });
-
+  //  $('.menu-btn').on('click', function () {
+  //   if ($('.animated-icon1').hasClass('open')) {
+  //     $('.animated-icon1').removeClass('open');
+  //     $('.menu').removeClass('active');
+  //   }else{
+  //     $('.animated-icon1').addClass('open');
+  //     $('.menu').addClass('active');
+  //   };
+  // });
+console.log('init');
   if ($('.timeline').length) {
     // ScrollMagic setup
      controller = new ScrollMagic.Controller();
@@ -65,7 +65,7 @@ function initScipt() {
         triggerElement: ".timeline",
         triggerHook: 0.4})
           .setTween(tweenSet)
-					//.addIndicators() // add indicators (requires plugin)
+					.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
       // collapse elements
       $('.r_d').each(function() {
@@ -121,7 +121,7 @@ function initScipt() {
       triggerElement: ".timeline",
       triggerHook: 0.3})
         .setTween(gsap.fromTo('.evet_category', {left:'-150px'}, {left: "15px", duration: 0.5} ))
-        //.addIndicators() // add indicators (requires plugin)
+        .addIndicators() // add indicators (requires plugin)
         .addTo(controller);
     $('.category_column').children().click(function() {
       if  ($(this).data('press') ==='yes') {
@@ -153,6 +153,15 @@ function initScipt() {
 
 }
 $(document).ready(function () {
+  $('.menu-btn').on('click', function () {
+    if ($('.animated-icon1').hasClass('open')) {
+      $('.animated-icon1').removeClass('open');
+      $('.menu').removeClass('active');
+    }else{
+      $('.animated-icon1').addClass('open');
+      $('.menu').addClass('active');
+    };
+  });
   initScipt();
 
 });
