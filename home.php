@@ -53,7 +53,7 @@
 				if($event->have_posts() ) : while ( $event->have_posts() ) : $event->the_post();
 				$cat = get_the_category();
 				if (count($cat) <=0 ) {
-					$cat = array('nocat');
+					$cat = array('no_cat');
 				}
 				?>
 				<div class="col-12 timeline_item" data-category="<?php echo $cat[0]->name; ?>">

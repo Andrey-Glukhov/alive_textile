@@ -129,18 +129,20 @@ function initScipt() {
       var catArray = [];
       $('.category_column').children().each(function() {
         if ($(this).data('press') ==='yes') {
-          catArray = $(this).data('category');
+          catArray.push( $(this).data('category'));
         }
       });
+      console.log(catArray);
       $('.timeline_item').each(function() {
-        console.log(this);
+        console.log($(this));
         if (catArray.length <= 0) { 
           $(this).removeClass('item_hide');
-        }
-        if (catArray.indexOf($(this).data('category')) >= 0) {
-          $(this).addClass('item_hide');
         } else {
-          $(this).removeClass('item_hide');
+          if (catArray.indexOf($(this).data('category')) >= 0) {
+            $(this).removeClass('item_hide');
+          } else {
+            $(this).addClass('item_hide');
+          }
         }
       });
     });
