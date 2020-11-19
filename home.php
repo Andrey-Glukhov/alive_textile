@@ -9,11 +9,11 @@
 	</div>
 	<div class="evet_category">
 		<div class="category_column" >
-			<div class="r_d_icon"></div>
-			<div class="museum_icon"></div>
-			<div class="exhibition_icon"></div>
-			<div class="prototype_icon"></div>
-			<div class="public_icon"></div>
+			<div class="r_d_icon" data-category="r&d" data-press="no"></div>
+			<div class="museum_icon" data-category="virtual museum" data-press="no"></div>
+			<div class="exhibition_icon" data-category="exhibition" data-press="no"></div>
+			<div class="prototype_icon" data-category="prototype" data-press="no"></div>
+			<div class="public_icon" data-category="public event"data-press="no"></div>
 		</div>
 	</div>
 
@@ -31,7 +31,7 @@
 				<div class="col-6 secure_event_background"></div>
 				<div class="col-6 secure_ongoing_background"></div>
 			</div>
-			<article class="row timeline_row">
+			<article class="row timeline_row" >
 				<?php $args = array(
 					'post_type' => 'timeline',
 					'post_status' => 'publish',
@@ -52,8 +52,11 @@
 
 				if($event->have_posts() ) : while ( $event->have_posts() ) : $event->the_post();
 				$cat = get_the_category();
+				if (count($cat) <=0 ) {
+					$cat = array('nocat');
+				}
 				?>
-				<div class="col-12">
+				<div class="col-12 timeline_item" data-category="<?php echo $cat[0]->name; ?>">
 					<div class="row">
 						<div class="r_d" data-tooltip="<?php the_field('event_date_text');?>"></div>
 						<div class="col-6 column_event_background"></div>

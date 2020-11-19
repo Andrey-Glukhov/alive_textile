@@ -37,7 +37,7 @@ top: auto;
 left: auto;
 width: 100%;
 min-height: 40px;
-z-index: 1000;
+z-index: 110;
 }
 .events_header{
   text-align: center;
@@ -346,38 +346,39 @@ canvas {
   height: 50px;
   width: 50px;
   margin: 10px 0;
+  cursor: pointer;
 }
 
 .r_d_icon{
-  background-image: url(../img/r_d.png);
-  background-size: contain;
+  background-image: url(../img/r_d_1.png);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
 }
 
 .museum_icon{
-  background-image: url(../img/virtual_museum.png);
-  background-size: contain;
+  background-image: url(../img/virtual_museum_1.png);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
 }
 .exhibition_icon{
-  background-image: url(../img/exhibition.png);
-  background-size: contain;
+  background-image: url(../img/exhibition_1.png);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
 }
 .prototype_icon{
-  background-image: url(../img/prototype.png);
-  background-size: contain;
+  background-image: url(../img/prototype_1.png);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
 }
 .public_icon{
-  background-image: url(../img/public_event.png);
-  background-size: contain;
+  background-image: url(../img/public_event_1.png);
+  background-size: cover;
   background-repeat: no-repeat;
-  background-position: center;
+  background-position: top;
 }
 /*--------------------------------------------------------------
 timeline
@@ -424,6 +425,9 @@ timeline
   background-color: #D5C5B3;
   height: 100%;
 }
+.item_hide {
+  display: none;
+}
 /*--------------------------------------------------------------
 single_project
 --------------------------------------------------------------*/
@@ -441,7 +445,7 @@ height: 100%;
   background-color:rgb(196, 255, 0);
 }
 .changing-pict{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/11/exhibition_1.png);
+  background-image: url(../img/exhibition_1.png);
   height: 60px;
   width: 100%;
   background-position: center;
@@ -453,7 +457,11 @@ height: 100%;
   width: auto;
 }
 .arrow-pict>a{
-  cursor: pointer;
+  height: 40px;
+  width: auto;
+  display: block;
+  position: relative;
+  z-index: 120;
 }
 .single_event_type{
   border-bottom: solid #ffffff 2px;
