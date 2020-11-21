@@ -35,14 +35,14 @@
 				<?php $args = array(
 					'post_type' => 'timeline',
 					'post_status' => 'publish',
-					'order' => 'DESC',
+					 'order' => 'DESC',
 					'orderby' => 'meta_value',
 					'posts_per_page' => -1,
 					'meta_query' => array(
 						array(
 							'key' => 'event_date',
 							'compare' => '>=',
-							'value' =>date('d/m/Y'),
+							'value' =>date('Y/m/d'),
 						)
 					),
 					'meta_key' => 'event_date',
