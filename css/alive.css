@@ -350,20 +350,20 @@ canvas {
 }
 
 .r_d_icon{
-  background-image: url(../img/r_d_1.png);
+  background-image: url(../img/experiment-01.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 
 .museum_icon{
-  background-image: url(../img/virtual_museum_1.png);
+  background-image: url(../img/experiment-02.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .exhibition_icon{
-  background-image: url(../img/exhibition_1.png);
+  background-image: url(../img/experiment_06-03-03.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -602,28 +602,41 @@ publications
 @media only screen and (max-width: 576px) {
   .menu{
     width: 100vw;
+    transform: translateX(100vw);
   }
-
+  .website_title>h1{
+      font-size: 4rem;
+    }
 }
 /*sm*/
 @media screen and (min-width: 576px) and (max-width: 768px) {
   .menu{
     width: 75vw;
+    transform: translateX(75vw);
   }
-
+  .website_title>h1{
+    font-size: 5rem;
+  }
 }
 /*md*/
 @media screen and (min-width: 768px) and (max-width: 992px){
   .menu{
     width: 50vw;
+    transform: translateX(50vw);
   }
-
+  .website_title>h1{
+    font-size: 8rem;
+  }
 }
 
 /*lg*/
 @media screen and (min-width: 992px)  {
   .menu{
     width: 25vw;
+    transform: translateX(25vw);
+  }
+  .website_title>h1{
+    font-size: 11rem;
   }
 
 }

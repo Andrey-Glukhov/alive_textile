@@ -30,7 +30,7 @@ var aliveSketch = function(p) {
     p.image(img, 0, 0);
     p.smooth();
     p.noStroke();
-    
+
     for (var ind = 0; ind < 3; ind++) {
       pointColor.push({posX: p.int(p.random(0, p.width)), posY: p.int(p.random(0, p.height))});
       pointBlank.push({posX: p.int(p.random(0, p.width)), posY: p.int(p.random(0, p.height))});
