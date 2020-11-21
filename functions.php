@@ -25,12 +25,14 @@ function alive_script_enqueue(){
   wp_enqueue_script( 'barba-js', 'https://cdn.jsdelivr.net/npm/@barba/core', array(), null, true );
   // P5
   wp_enqueue_script( 'p5-js', 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js', array(), null, true );
+  
+  //if (is_home()) {
+    //wp_enqueue_script( 'play-canvas', get_template_directory_uri() . '/js/play-canvas.js', array('p5-js'), null, true );
+  //}
 
   wp_enqueue_script( 'alive-js', get_template_directory_uri() . '/js/alive.js', array('jquery', 'scroll-magic-js', 'gsap-js', 'bootstrap-js'), null, true );
 
-  if (is_home()) {
-    wp_enqueue_script( 'play-canvas', get_template_directory_uri() . '/js/play-canvas.js', array('p5-js'), null, true );
-  }
+  
 }
 add_action( 'wp_enqueue_scripts', 'alive_script_enqueue' );
 
@@ -45,8 +47,8 @@ add_theme_support('custom-header');
 add_theme_support('post-formats', array('aside', 'chat', 'gallery','link','image','quote','status','video'));
 add_theme_support('post-thumbnails');
 
-setcookie(TEST_COOKIE, 'WP Cookie check', 0, COOKIEPATH, COOKIE_DOMAIN);
-if ( SITECOOKIEPATH != COOKIEPATH ) setcookie(TEST_COOKIE, 'WP Cookie check', 0, SITECOOKIEPATH, COOKIE_DOMAIN);
+//setcookie(TEST_COOKIE, 'WP Cookie check', 0, COOKIEPATH, COOKIE_DOMAIN);
+//if ( SITECOOKIEPATH != COOKIEPATH ) setcookie(TEST_COOKIE, 'WP Cookie check', 0, SITECOOKIEPATH, COOKIE_DOMAIN);
 
 // add_filter('post_class','timeline_column_classes');
 // function timeline_column_classes( $classes ) {
