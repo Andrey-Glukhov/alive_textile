@@ -13,6 +13,7 @@ get_header(); ?>
 				}
 		?>
 <section class="container-fluid single_item <?php the_field('event_type');?>_color">
+<div class="single_opener" id="opener_canvas"></div>
 <article class="row justify-content-center single_item_header">
   <div class="col-md-1 arrow-pict"><a href="http://localhost:8888/alive_textile/wordpress/"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/arrow-01.png"/></a></div>
   <div class="col-md-4 single_<?php the_field('event_type');?>_type"><h2><?php the_field('event_type');?></h2></div>
