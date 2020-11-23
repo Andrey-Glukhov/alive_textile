@@ -350,32 +350,32 @@ canvas {
 }
 
 .r_d_icon{
-  background-image: url(../img/experiment-01.png);
+  background-image: url(../img/icons_sampels-04.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 
 .museum_icon{
-  background-image: url(../img/experiment-02.png);
+  background-image: url(../img/icons_samples-02.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .exhibition_icon{
-  background-image: url(../img/experiment_06-03-03.png);
+  background-image: url(../img/icons_samples-01.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .prototype_icon{
-  background-image: url(../img/prototype_1.png);
+  background-image: url(../img/icons_samples-05.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .public_icon{
-  background-image: url(../img/public_event_1.png);
+  background-image: url(../img/icons_samples-03.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
