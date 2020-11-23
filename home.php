@@ -60,6 +60,7 @@
 				?>
 				<div class="col-12 timeline_item" data-category="<?php echo $catname; ?>">
 					<div class="row">
+						<!--<div class="overlay_icon anim_icon"></div>-->
 						<div class="r_d" data-tooltip="<?php the_field('event_date_text');?>"></div>
 						<div class="col-6 column_event_background"></div>
 						<div class="col-6 column_ongoing_background"></div>

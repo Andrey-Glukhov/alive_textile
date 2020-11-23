@@ -62,7 +62,7 @@ function initScipt() {
   // });
 console.log('init');
   if ($('.timeline').length) {
-    
+
     // ScrollMagic setup
      controller = new ScrollMagic.Controller();
      gsap.defaultOverwrite = false;
@@ -77,21 +77,18 @@ console.log('init');
       $('.r_d').each(function() {
       $(this).click(function(evt) {
         $('.collapse').collapse('hide');
+        if ($(this).hasClass('overlay_icon')){
+          gsap.to($(this).removeClass('overlay_icon'), 0.5, {scale:1});
+        }else{
+        gsap.to($('.r_d').removeClass('overlay_icon'), 0.5, {scale:1});
+        gsap.to($(this).addClass('overlay_icon'), 0.5, {scale:3});
+      };
         var circle = evt.target;
         $(circle).parent().siblings('.collapse').collapse('show');
         $(circle).parent().siblings('.collapse').children('.column_event');
-        // var collapseHeight = $(circle).parent().siblings('.collapsing').children('.column_event').height();
-        // var collapseWidth = $(circle).parent().siblings('.collapsing').children('.column_event').width();
-        // console.log('---' + collapseHeight + '--- ' + collapseWidth);
-        // console.log($(circle).parent().siblings());
-        // var cnvasObj = document.querySelector('#opener_canvas canvas');
-        // var dataURL = cnvasObj.toDataURL('image/jpg', 0.2,{left: 0, top: 0, width: collapseWidth, height: collapseHeight}); // ,{left: 0, top: 0, width: collapseWidth, height: collapseHeight}
-        // console.log(dataURL);
-        // var imageElement = $(circle).parent().siblings('.collapsing').find('img')[0];
-        // imageElement.src = dataURL;
       });
      });
-    
+
      // Timelene tooltip
     var tooltipElem;
     document.onmouseover = function(event) {
@@ -122,7 +119,7 @@ console.log('init');
     $(window).resize(function() {
       initP5()
     });
-    // Categories 
+    // Categories
     var scene_cat = new ScrollMagic.Scene({
       triggerElement: ".timeline",
       triggerHook: 0.3})
@@ -134,9 +131,9 @@ console.log('init');
         $(this).data('press', 'no');
         $(this).css('background-position', 'top');
       } else {
-        $(this).data('press', 'yes');  
+        $(this).data('press', 'yes');
         $(this).css('background-position', 'bottom');
-      }      
+      }
       var catArray = [];
       $('.category_column').children().each(function() {
         if ($(this).data('press') ==='yes') {
@@ -144,7 +141,7 @@ console.log('init');
         }
       });
       $('.timeline_item').each(function() {
-        if (catArray.length <= 0) { 
+        if (catArray.length <= 0) {
           $(this).removeClass('item_hide');
         } else {
           if (catArray.indexOf($(this).data('category')) >= 0) {
@@ -155,7 +152,7 @@ console.log('init');
         }
       });
     });
-    setTimeout(setBack, 3300); // unset background alive_opener 
+    setTimeout(setBack, 3300); // unset background alive_opener
   }
 
 }
@@ -221,7 +218,7 @@ var aliveSketch = function(p) {
     p.image(img, 0, 0);
     p.smooth();
     p.noStroke();
-    
+
     for (var ind = 0; ind < 3; ind++) {
       pointColor.push({posX: p.int(p.random(0, p.width)), posY: p.int(p.random(0, p.height))});
       pointBlank.push({posX: p.int(p.random(0, p.width)), posY: p.int(p.random(0, p.height))});
