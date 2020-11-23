@@ -389,7 +389,7 @@ timeline
   height: 100%;
 }
 .timeline_row{
-  padding: 40px 0;
+  padding: 40px 0 0 0;
   min-height: 90vh;
   height: 100%;
 }
@@ -429,11 +429,45 @@ timeline
 .item_hide {
   display: none;
 }
-.overlay_icon{
-  background-image: url(../img/exhibition.png);
-  background-size: contain;
-  background-position: center;
+.overlay_icon_r_d{
+  background-image: url(../img/icons_samples-09.png);
+  background-size: cover;
   background-repeat: no-repeat;
+  background-position: top;
+}
+
+.overlay_icon_virtual_museum{
+  background-image: url(../img/icons_samples-07.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.overlay_icon_exhibition{
+  background-image: url(../img/icons_samples-06.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.overlay_icon_prototype{
+  background-image: url(../img/icons_samples-10.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.overlay_icon_public_event{
+  background-image: url(../img/icons_samples-08.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.event_date_heading{
+  padding: 10px 0;
+  text-align: center;
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  font-size: 2rem;
+  color: #485E1E;
 }
 /*--------------------------------------------------------------
 single_project

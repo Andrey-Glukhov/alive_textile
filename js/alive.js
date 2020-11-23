@@ -51,7 +51,7 @@ barba.init({
   }]
 });
 function initScipt() {
-  
+
 console.log('init');
   if ($('.timeline').length) {
 
@@ -69,11 +69,12 @@ console.log('init');
       $('.r_d').each(function() {
       $(this).click(function(evt) {
         $('.collapse').collapse('hide');
-        if ($(this).hasClass('overlay_icon')){
-          gsap.to($(this).removeClass('overlay_icon'), 0.5, {scale:1});
+        var catName = 'overlay_icon_' + $(this).parent().parent().data('category');
+        if ($(this).hasClass(catName)){
+          gsap.to($(this).removeClass(catName), 0.5, {scale:1});
         }else{
-        gsap.to($('.r_d').removeClass('overlay_icon'), 0.5, {scale:1});
-        gsap.to($(this).addClass('overlay_icon'), 0.5, {scale:3});
+        gsap.to($('.r_d').removeClass('overlay_icon_exhibition, overlay_icon_prototype, overlay_icon_public_event, overlay_icon_virtual_museum, overlay_icon_r_d'), 0.5, {scale:1});
+        gsap.to($(this).addClass(catName), 0.5, {scale:3});
       };
         var circle = evt.target;
         $(circle).parent().siblings('.collapse').collapse('show');
@@ -189,7 +190,7 @@ function initP5() {
 }
 
 var aliveSketch = function(p) {
-  
+
   var stepSize = 1;
   var diameter = 1;
   var pointColor = []
@@ -219,7 +220,7 @@ var aliveSketch = function(p) {
     }
   }
 
-  
+
   p.draw = function() {
     //console.log(pointColor);
     for (var i=0; i<=speed; i++) {
@@ -243,7 +244,7 @@ var aliveSketch = function(p) {
 }
 
 var singleSketch = function(p) {
-  
+
   var stepSize = 1;
   var diameter = 1;
   var pointColor = []
@@ -273,7 +274,7 @@ var singleSketch = function(p) {
     }
   }
 
-  
+
   p.draw = function() {
     for (var i=0; i<=speed; i++) {
     for (var ind = 0; ind < 3; ind++) {

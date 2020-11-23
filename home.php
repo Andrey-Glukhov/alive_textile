@@ -60,13 +60,13 @@
 				$event_year = substr(get_field('event_date'), -4);
 				if ($current_year != $event_year) {
 					$current_year = $event_year;
-					?> 
-					<div class="event_date_heading"><?php echo($current_year);?></div>
+					?>
+					<div class="col-12 event_date_heading"><?php echo($current_year);?></div>
 					<?php
 				} else {
 
 				}
-				
+
 				?>
 				<div class="col-12 timeline_item" data-category="<?php echo $catname; ?>">
 					<div class="row">
