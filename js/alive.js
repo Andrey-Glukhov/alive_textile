@@ -22,8 +22,8 @@ function page_delay(n){
 };
 
 barba.init({
-  debug: true,
-  logLevel: 'debug',
+  //debug: true,
+  //logLevel: 'debug',
   transitions: [{
     name: 'page_transition',
     sync: true,
@@ -51,15 +51,7 @@ barba.init({
   }]
 });
 function initScipt() {
-  //  $('.menu-btn').on('click', function () {
-  //   if ($('.animated-icon1').hasClass('open')) {
-  //     $('.animated-icon1').removeClass('open');
-  //     $('.menu').removeClass('active');
-  //   }else{
-  //     $('.animated-icon1').addClass('open');
-  //     $('.menu').addClass('active');
-  //   };
-  // });
+  
 console.log('init');
   if ($('.timeline').length) {
     
@@ -80,16 +72,7 @@ console.log('init');
         var circle = evt.target;
         $(circle).parent().siblings('.collapse').collapse('show');
         $(circle).parent().siblings('.collapse').children('.column_event');
-        // var collapseHeight = $(circle).parent().siblings('.collapsing').children('.column_event').height();
-        // var collapseWidth = $(circle).parent().siblings('.collapsing').children('.column_event').width();
-        // console.log('---' + collapseHeight + '--- ' + collapseWidth);
-        // console.log($(circle).parent().siblings());
-        // var cnvasObj = document.querySelector('#opener_canvas canvas');
-        // var dataURL = cnvasObj.toDataURL('image/jpg', 0.2,{left: 0, top: 0, width: collapseWidth, height: collapseHeight}); // ,{left: 0, top: 0, width: collapseWidth, height: collapseHeight}
-        // console.log(dataURL);
-        // var imageElement = $(circle).parent().siblings('.collapsing').find('img')[0];
-        // imageElement.src = dataURL;
-      });
+       });
      });
     
      // Timelene tooltip
@@ -191,22 +174,14 @@ function initP5() {
 
 var aliveSketch = function(p) {
   var controller;
-  var NORTH = 0;
-  var NORTHEAST = 1;
-  var EAST = 2;
-  var SOUTHEAST = 3;
-  var SOUTH = 4;
-  var SOUTHWEST = 5;
-  var WEST = 6;
-  var NORTHWEST= 7;
-  var stepSize = 1;
+   var stepSize = 1;
   var diameter = 1;
   var pointColor = []
   var pointBlank = []
   var countPoint = 10000;
   var speed = 150;
-
   var img;
+
   p.preload = function() {
   img = p.loadImage('http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/11/start.png'); // Load the image
   }
@@ -227,45 +202,23 @@ var aliveSketch = function(p) {
       pointBlank.push({posX: p.int(p.random(0, p.width)), posY: p.int(p.random(0, p.height))});
     }
   }
+
   function getPosition(pointArg) {
     var pointResult = {posX:pointArg.posX, posY:pointArg.posY};
+    var directionsArray = [
+      [0,-1], [1,-1], [1,0], [1,1], [0,1], [-1,1], [-1,0], [-1,-1]
+    ];
     var direction = p.int(p.random(0, 8));
 
-      if (direction == NORTH) {
-        pointResult.posY -= stepSize;
-      }
-      else if (direction == NORTHEAST) {
-        pointResult.posX += stepSize;
-        pointResult.posY -= stepSize;
-      }
-      else if (direction == EAST) {
-        pointResult.posX += stepSize;
-      }
-      else if (direction == SOUTHEAST) {
-        pointResult.posX += stepSize;
-        pointResult.posY += stepSize;
-      }
-      else if (direction == SOUTH) {
-        pointResult.posY += stepSize;
-      }
-      else if (direction == SOUTHWEST) {
-        pointResult.posX -= stepSize;
-        pointResult.posY += stepSize;
-      }
-      else if (direction == WEST) {
-        pointResult.posX -= stepSize;
-      }
-      else if (direction == NORTHWEST) {
-        pointResult.posX -= stepSize;
-        pointResult.posY -= stepSize;
-      }
-
+      pointResult.posX += directionsArray[direction][0] * stepSize;
+      pointResult.posY += directionsArray[direction][1] * stepSize;
       if (pointResult.posX > p.width) pointResult.posX = 0;
       if (pointResult.posX < 0) pointResult.posX = p.width;
       if (pointResult.posY < 0) pointResult.posY = p.height;
       if (pointResult.posY > p.height) pointResult.posY = 0;
       return pointResult;
   }
+  
   p.draw = function() {
     for (var i=0; i<=speed; i++) {
     for (var ind = 0; ind < 3; ind++) {
