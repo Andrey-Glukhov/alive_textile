@@ -60,4 +60,23 @@ add_theme_support('post-thumbnails');
 //     return $classes;
 // }
 
+function log_rest_api_errors( $result, $server, $request ) {
+	if ( $result->is_error() ) {
+		error_log( sprintf(
+			"REST request: %s: %s",
+			$request->get_route(),
+			print_r( $request->get_params(), true )
+		) );
+
+		error_log( sprintf(
+			"REST result: %s: %s",
+			$result->get_matched_route(),
+			print_r( $result->get_data(), true )
+		) );
+	}
+
+	return $result;
+}
+add_filter( 'rest_post_dispatch', 'log_rest_api_errors', 10, 3 );
+
 ?>
