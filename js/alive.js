@@ -73,7 +73,7 @@ console.log('init');
         if ($(this).hasClass(catName)){
           gsap.to($(this).removeClass(catName), 0.5, {scale:1});
         }else{
-        gsap.to($('.r_d').removeClass('overlay_icon_exhibition, overlay_icon_prototype, overlay_icon_public_event, overlay_icon_virtual_museum, overlay_icon_r_d'), 0.5, {scale:1});
+        gsap.to($('.r_d').removeClass('overlay_icon_exhibition overlay_icon_prototype overlay_icon_public_event  overlay_icon_virtual_museum  overlay_icon_r_d'), 0.5, {scale:1});
         gsap.to($(this).addClass(catName), 0.5, {scale:3});
       };
         var circle = evt.target;
@@ -93,12 +93,17 @@ console.log('init');
       tooltipElem.innerHTML = tooltipHtml;
       document.body.append(tooltipElem);
       var coords = target.getBoundingClientRect();
-      var left = coords.left + (target.offsetWidth - tooltipElem.offsetWidth) / 2;
-      if (left < 0) left = 0;
-      var top = coords.top - tooltipElem.offsetHeight - 5;
-      if (top < 0) {
-        top = coords.top + target.offsetHeight + 5;
-      }
+      //console.log($(target).parent().siblings('.row').children('.column_ongoing').children().length);
+      if ($(target).parent().siblings('.row').children('.column_ongoing').children().length) {
+        var left = coords.left + (target.offsetWidth )/2 + 20;//- tooltipElem.offsetWidth) / 2;
+      } else {
+        var left = coords.left + (target.offsetWidth )/2 - tooltipElem.offsetWidth - 20; 
+      } 
+      //if (left < 0) left = 0;
+      var top = coords.top + target.offsetHeight/2 -tooltipElem.offsetHeight/2;
+      // if (top < 0) {
+      //   top = coords.top + target.offsetHeight + 5;
+      // }
       tooltipElem.style.left = left + 'px';
       tooltipElem.style.top = top + 'px';
     };
@@ -263,8 +268,8 @@ var singleSketch = function(p) {
 
     var cnv = p.createCanvas(clientWidth, clientHeight);
     cnv.parent("opener_canvas");
-    p.background(213, 197,179);
-    p.image(img, 0, 0);
+    p.background(0, 0, 0, 0);
+    //p.image(img, 0, 0);
     p.smooth();
     p.noStroke();
 
@@ -285,7 +290,7 @@ var singleSketch = function(p) {
       if (countPoint <= 0) {
       for (var indBlank = 0; indBlank < 3; indBlank++) {
         pointBlank[indBlank] = getPosition(pointBlank[indBlank],stepSize, p.width, p.height);
-        p.fill(213, 197, 179);
+        p.fill(0, 0, 0, 0);
         p.ellipse(pointBlank[indBlank].posX+stepSize/2, pointBlank[indBlank].posY+stepSize/2, diameter, diameter);
       }
       } else {
