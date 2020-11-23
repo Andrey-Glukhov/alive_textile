@@ -38,18 +38,18 @@
 					 'order' => 'DESC',
 					'orderby' => 'meta_value',
 					'posts_per_page' => -1,
-					'meta_query' => array(
-						array(
-							'key' => 'event_date',
-							'compare' => '>=',
-							'value' =>date('Y/m/d'),
-						)
-					),
+					// 'meta_query' => array(
+					// 	array(
+					// 		'key' => 'event_date',
+					// 		'compare' => '>=',
+					// 		'value' =>date('Y/m/d'),
+					// 	)
+					// ),
 					'meta_key' => 'event_date',
 					'meta_type' => 'DATE'
 				);
 				$event = new WP_Query( $args );
-
+				$current_year ="";
 				if($event->have_posts() ) : while ( $event->have_posts() ) : $event->the_post();
 				$cat = get_the_category();
 				if (count($cat) <=0 ) {
@@ -57,6 +57,16 @@
 				} else {
 					$catname = $cat[0]->name;
 				}
+				$event_year = substr(get_field('event_date'), -4);
+				if ($current_year != $event_year) {
+					$current_year = $event_year;
+					?> 
+					<div class="event_date_heading"><?php echo($current_year);?></div>
+					<?php
+				} else {
+
+				}
+				
 				?>
 				<div class="col-12 timeline_item" data-category="<?php echo $catname; ?>">
 					<div class="row">
