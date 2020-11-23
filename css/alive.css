@@ -389,6 +389,7 @@ timeline
   height: 100%;
 }
 .timeline_row{
+  padding: 40px 0;
   min-height: 90vh;
   height: 100%;
 }
@@ -428,6 +429,12 @@ timeline
 .item_hide {
   display: none;
 }
+.overlay_icon{
+  background-image: url(../img/exhibition.png);
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
 /*--------------------------------------------------------------
 single_project
 --------------------------------------------------------------*/
@@ -439,11 +446,15 @@ height: 100%;
   padding-top: 15px;
 }
 .ongoing_color{
-  background-color:rgb(196, 255, 0);
+  background: rgb(190,253,51);
+  background: linear-gradient(90deg, rgba(190,253,51,1) 37%, rgba(211,195,177,1) 100%);
+  /*background-color:rgb(196, 255, 0);*/
 
 }
 .event_color{
-  background-color: #D5C5B3;
+  background: rgb(190,253,51);
+background: linear-gradient(90deg, rgba(190,253,51,1) 0%, rgba(211,195,177,1) 37%);
+  /*background-color: #D5C5B3;*/
 }
 .exhibition-pict{
   background-image: url(../img/exhibition.png);
@@ -540,6 +551,7 @@ margin-bottom: 0;
   font-family: 'Bitter', serif;
   font-weight: 400;
   font-size: 1rem;
+  color: #485E1E;
 }
 .single_event_date>p{
   margin-bottom: 0;
@@ -569,10 +581,25 @@ margin-bottom: 0;
 .single_event>h2{
   font-family: 'Bitter', serif;
   font-style: normal;
-  font-size: 2rem;
+  font-size: 2.3rem;
   font-weight: 500;
   color: #ffffff;
 }
+.wp-bootstrap-blocks-row{
+    font-family: 'Bitter', serif;
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #485E1E;
+  }
+  .wp-bootstrap-blocks-row>div>h2{
+      font-family: 'Bitter', serif;
+      text-transform: uppercase;
+      font-style: italic;
+      font-size: 2.3rem;
+      font-weight: 500;
+      color: #485E1E;
+    }
 /*--------------------------------------------------------------
 about
 --------------------------------------------------------------*/

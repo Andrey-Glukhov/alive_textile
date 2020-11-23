@@ -49,8 +49,10 @@ get_header(); ?>
 </article>
 
 
-<article class="row single_row fluid_content justify-content-center">
+<article class="fluid_content">
+
   <?php the_content();?>
+
 </article>
 </section>
 <?php endwhile; ?>
