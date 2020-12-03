@@ -3,11 +3,19 @@
 <main data-barba="container" data-barba-namespace="home">
 	<div class="container-fluid devide_menu">
 		<div class="row menu_sticker" >
-			<div class="col-6 events_header">ONGOING</div>
-			<div class="col-6 ongoing_header">EVENTS</div>
+			<div class="col-6 events_header">
+				<div class="r_d_icon" data-category="r_d" data-press="no"></div>
+				<div class="museum_icon" data-category="virtual museum" data-press="no"></div>
+				<div class="exhibition_icon" data-category="exhibition" data-press="no"></div>
+				</div>
+			<div class="col-6 ongoing_header">
+				<div class="exhibition_icon" data-category="exhibition" data-press="no"></div>
+				<div class="prototype_icon" data-category="prototype" data-press="no"></div>
+				<div class="public_icon" data-category="public event"data-press="no"></div>
+			</div>
 		</div>
 	</div>
-	<div class="evet_category">
+	<!-- <div class="evet_category">
 		<div class="category_column" >
 			<div class="r_d_icon" data-category="r_d" data-press="no"></div>
 			<div class="museum_icon" data-category="virtual museum" data-press="no"></div>
@@ -15,7 +23,7 @@
 			<div class="prototype_icon" data-category="prototype" data-press="no"></div>
 			<div class="public_icon" data-category="public event"data-press="no"></div>
 		</div>
-	</div>
+	</div> -->
 
   <section class="alive_opener" id="opener_canvas">
 		<article>

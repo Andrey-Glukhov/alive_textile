@@ -61,7 +61,7 @@ console.log('init');
      var tweenSet = gsap.fromTo('.menu_sticker', {top:'-150%'}, {top:0, duration: 0.5} );
      var scene = new ScrollMagic.Scene({
         triggerElement: ".timeline",
-        triggerHook: 0.4})
+        triggerHook: 0.05})
           .setTween(tweenSet)
 					//.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
@@ -116,9 +116,9 @@ console.log('init');
     var scene_cat = new ScrollMagic.Scene({
       triggerElement: ".timeline",
       triggerHook: 0.3})
-        .setTween(gsap.fromTo('.evet_category', {left:'-150px'}, {left: "15px", duration: 0.5} ))
+        //.setTween(gsap.fromTo('.evet_category', {left:'-150px'}, {left: "15px", duration: 0.5} ))
         //.addIndicators() // add indicators (requires plugin)
-        .addTo(controller);
+        //.addTo(controller);
     $('.category_column').children().click(function() {
       if  ($(this).data('press') ==='yes') {
         $(this).data('press', 'no');

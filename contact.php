@@ -5,7 +5,7 @@
 get_header(); ?>
 
 <div class="page_transition"></div>
-<main data-barba="container" data-barba-namespace="about">
+<main data-barba="container" data-barba-namespace="contact">
 <div class="test">TEST</div>
 </main>
 
