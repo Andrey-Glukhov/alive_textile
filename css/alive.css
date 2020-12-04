@@ -402,7 +402,15 @@ canvas {
   font-weight: 400;
   color: #ffffff;
 }
-
+.research_category{
+  opacity: 0;
+  transform: translateY(-3rem);
+}
+.research_icon:hover ~ .research_category{
+  opacity: 100;
+  transform: translateY(0rem);
+  transition: all 3s ease-in-out;
+}
 /*--------------------------------------------------------------
 timeline
 --------------------------------------------------------------*/
