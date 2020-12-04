@@ -34,6 +34,9 @@ barba.init({
        done();
      }, 1600);
     },
+    enter(data) {
+      window.scrollTo(0,0);
+    },
      after(data) {
 
       const done = this.async();
@@ -51,8 +54,6 @@ barba.init({
   }]
 });
 function initScipt() {
-
-console.log('init');
   if ($('.timeline').length) {
 
     // ScrollMagic setup
@@ -61,9 +62,9 @@ console.log('init');
      var tweenSet = gsap.fromTo('.menu_sticker', {top:'-150%'}, {top:0, duration: 0.5} );
      var scene = new ScrollMagic.Scene({
         triggerElement: ".timeline",
-        triggerHook: 0.05})
+        triggerHook: 0.1})
           .setTween(tweenSet)
-					//.addIndicators() // add indicators (requires plugin)
+					.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
       // collapse elements
       $('.r_d').each(function() {
@@ -79,7 +80,6 @@ console.log('init');
           };
         });
         $(this).mouseout(function(evt) {
-          console.log($(this).css('background-position'));
           if ( $(this).data('open') == 'open') {
             return
           }
@@ -116,7 +116,6 @@ console.log('init');
       tooltipElem.innerHTML = tooltipHtml;
       document.body.append(tooltipElem);
       var coords = target.getBoundingClientRect();
-      //console.log($(target).parent().siblings('.row').children('.column_ongoing').children().length);
       if ($(target).parent().siblings('.row').children('.column_ongoing').children().length) {
         var left = coords.left + (target.offsetWidth )/2 + 20;//- tooltipElem.offsetWidth) / 2;
       } else {
@@ -141,12 +140,12 @@ console.log('init');
       initP5()
     });
     // Categories
-    var scene_cat = new ScrollMagic.Scene({
-      triggerElement: ".timeline",
-      triggerHook: 0.3})
-        //.setTween(gsap.fromTo('.evet_category', {left:'-150px'}, {left: "15px", duration: 0.5} ))
-        //.addIndicators() // add indicators (requires plugin)
-        //.addTo(controller);
+    // var scene_cat = new ScrollMagic.Scene({
+    //   triggerElement: ".timeline",
+    //   triggerHook: 0.3})
+    //     .setTween(gsap.fromTo('.evet_category', {left:'-150px'}, {left: "15px", duration: 0.5} ))
+    //     .addIndicators() // add indicators (requires plugin)
+    //     .addTo(controller);
     $('.category_column').children('.icon_wraper').children('.filter').click(function() {
       if  ($(this).data('press') ==='yes') {
         $(this).data('press', 'no');
@@ -252,8 +251,7 @@ var aliveSketch = function(p) {
 
 
   p.draw = function() {
-    //console.log(pointColor);
-    for (var i=0; i<=speed; i++) {
+   for (var i=0; i<=speed; i++) {
     for (var ind = 0; ind < 3; ind++) {
       pointColor[ind] =  getPosition(pointColor[ind],stepSize, p.width, p.height);
       p.fill(190, 255, 60, 70);
