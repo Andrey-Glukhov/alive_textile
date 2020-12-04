@@ -17,5 +17,5 @@
             ?>
           </ul>
       </div>
+      <div><i class="fab fa-instagram-square"></i> <i class="fab fa-instagram-square"></i></div>
 </nav>
-
