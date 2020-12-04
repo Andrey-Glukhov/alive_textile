@@ -346,22 +346,22 @@ canvas {
     flex-direction: column;
     z-index: 10;
 }
-.r_d_icon, .museum_icon, .exhibition_icon, .prototype_icon, .public_icon{
-  height: 50px;
-  width: 50px;
+.research_icon, .demonstrator_icon, .exhibition_icon, .vision_icon, .dialogue_icon, .update_icon{
+  height: 45px;
+  width: 45px;
   margin: 10px 0;
   cursor: pointer;
 }
 
-.r_d_icon{
+.research_icon{
   background-image: url(../img/icons_samples-09.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 
-.museum_icon{
-  background-image: url(../img/icons_samples-07.png);
+.demonstrator_icon{
+  background-image: url(../img/demonstrator-11.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -372,18 +372,37 @@ canvas {
   background-repeat: no-repeat;
   background-position: top;
 }
-.prototype_icon{
+.vision_icon{
   background-image: url(../img/icons_samples-10.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
-.public_icon{
+.dialogue_icon{
+  background-image: url(../img/dialogues-02.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.update_icon{
   background-image: url(../img/icons_samples-08.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
+.icon_wraper{
+  display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.research_category>p{
+  font-family: 'Bitter', serif;
+  font-style: normal;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+}
+
 /*--------------------------------------------------------------
 timeline
 --------------------------------------------------------------*/
@@ -433,33 +452,26 @@ timeline
 .item_hide {
   display: none;
 }
-.overlay_icon_r_d{
+.overlay_icon_research{
   background-image: url(../img/icons_samples-09.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
+}
+.overlay_icon_demonstrators{
+  background-image: url(../img/icons_samples-07.png);
+}
+.overlay_icon_exhibitions{
+  background-image: url(../img/icons_samples-06.png);
+}
+.overlay_icon_visions{
+  background-image: url(../img/icons_samples-10.png);
+}
+.overlay_icon_dialogues{
+  background-image: url(../img/icons_samples-08.png);
+}
+.overlay_icon_updates{
+  background-image: url(../img/icons_samples-08.png);
 }
 
-.overlay_icon_virtual_museum{
-  background-image: url(../img/icons_samples-07.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.overlay_icon_exhibition{
-  background-image: url(../img/icons_samples-06.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.overlay_icon_prototype{
-  background-image: url(../img/icons_samples-10.png);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: top;
-}
-.overlay_icon_public_event{
-  background-image: url(../img/icons_samples-08.png);
+.overlay_icon_research, .overlay_icon_demonstrators, .overlay_icon_exhibitions, .overlay_icon_visions, .overlay_icon_dialogues, .overlay_icon_updates{
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -666,7 +678,65 @@ team
 /*--------------------------------------------------------------
 subscribe
 --------------------------------------------------------------*/
+.subscribe_page{
+  background: rgb(211,195,177);
+background: linear-gradient(90deg, rgba(211,195,177,1) 15%, rgba(190,253,51,1) 35%, rgba(190,253,51,1) 50%, rgba(190,253,51,1) 65%, rgba(211,195,177,1) 85%);
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+}
+#mc_embed_signup{
+  width: 100%;
+}
+.subscribe_form_bg{
+height: 100%;
+display: flex;
+justify-content: center;
+}
+.subscribe_row{
+  min-height: 85vh;
+  align-items: center;
+}
+.mc-field-group>label{
+  font-family: 'Bitter', serif;
+  text-transform: uppercase;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #485E1E;
+}
+input#mce-EMAIL, input#mce-FNAME, input#mce-LNAME{
+  border-radius: 0 !important;
+  background-color:#D5C5B3;
+}
 
+#mc_embed_signup input{
+  border: none !important;
+  border-color: none !important;
+  color: #ffffff;
+  font-family: 'Bitter', serif;
+  font-size: 1rem;
+  font-weight: 500;
+}
+div.mce_inline_error{
+  background: none !important;
+  font-family: 'Bitter', serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #485E1E !important;
+}
+#mc_embed_signup .button {
+  background-color: #485E1E !important;
+  border-radius: 0 !important;
+  color: #ffffff !important;
+  font-family: 'Bitter', serif !important;
+  font-size: 1rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  margin-top: 30px !important;
+}
+div.mc-field-group{
+  margin: 12px 0 !important;
+}
 /*--------------------------------------------------------------
 publications
 --------------------------------------------------------------*/

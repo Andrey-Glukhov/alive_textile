@@ -3,15 +3,18 @@
 <main data-barba="container" data-barba-namespace="home">
 	<div class="container-fluid devide_menu">
 		<div class="row menu_sticker" >
-			<div class="col-6 events_header">
-				<div class="r_d_icon" data-category="r_d" data-press="no"></div>
-				<div class="museum_icon" data-category="virtual museum" data-press="no"></div>
-				<div class="exhibition_icon" data-category="exhibition" data-press="no"></div>
+			<div class="col-6 events_header category_column">
+				<div class="icon_wraper">
+					<div class="research_icon" data-category="research" data-press="no"></div>
+					<div class="research_category"><p>research</p></div>
 				</div>
-			<div class="col-6 ongoing_header">
-				<div class="exhibition_icon" data-category="exhibition" data-press="no"></div>
-				<div class="prototype_icon" data-category="prototype" data-press="no"></div>
-				<div class="public_icon" data-category="public event"data-press="no"></div>
+				<div class="demonstrator_icon" data-category="demonstrators" data-press="no"></div>
+				<div class="vision_icon" data-category="visions" data-press="no"></div>
+				</div>
+			<div class="col-6 ongoing_header category_column">
+				<div class="exhibition_icon" data-category="exhibitions" data-press="no"></div>
+				<div class="dialogue_icon" data-category="dialogues" data-press="no"></div>
+				<div class="update_icon" data-category="updates"data-press="no"></div>
 			</div>
 		</div>
 	</div>
@@ -79,7 +82,7 @@
 				<div class="col-12 timeline_item" data-category="<?php echo $catname; ?>">
 					<div class="row">
 						<!--<div class="overlay_icon anim_icon"></div>-->
-						<div class="r_d" data-tooltip="<?php the_field('event_date_text');?>"></div>
+						<div class="r_d" data-tooltip="<?php the_title();?>"></div>
 						<div class="col-6 column_event_background"></div>
 						<div class="col-6 column_ongoing_background"></div>
 					</div>

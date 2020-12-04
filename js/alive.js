@@ -67,15 +67,17 @@ console.log('init');
           .addTo(controller);
       // collapse elements
       $('.r_d').each(function() {
-      $(this).click(function(evt) {
-        $('.collapse').collapse('hide');
+        $(this).mouseover(function(evt) {
         var catName = 'overlay_icon_' + $(this).parent().parent().data('category');
         if ($(this).hasClass(catName)){
           gsap.to($(this).removeClass(catName), 0.5, {scale:1});
         }else{
-        gsap.to($('.r_d').removeClass('overlay_icon_exhibition overlay_icon_prototype overlay_icon_public_event  overlay_icon_virtual_museum  overlay_icon_r_d'), 0.5, {scale:1});
+        gsap.to($('.r_d').removeClass('overlay_icon_research overlay_icon_demonstrators overlay_icon_exhibitions overlay_icon_visions overlay_icon_dialogues overlay_icon_updates'), 0.5, {scale:1});
         gsap.to($(this).addClass(catName), 0.5, {scale:3});
       };
+    });
+      $(this).click(function(evt) {
+        $('.collapse').collapse('hide');
         var circle = evt.target;
         $(circle).parent().siblings('.collapse').collapse('show');
         $(circle).parent().siblings('.collapse').children('.column_event');
@@ -97,8 +99,8 @@ console.log('init');
       if ($(target).parent().siblings('.row').children('.column_ongoing').children().length) {
         var left = coords.left + (target.offsetWidth )/2 + 20;//- tooltipElem.offsetWidth) / 2;
       } else {
-        var left = coords.left + (target.offsetWidth )/2 - tooltipElem.offsetWidth - 20; 
-      } 
+        var left = coords.left + (target.offsetWidth )/2 - tooltipElem.offsetWidth - 20;
+      }
       //if (left < 0) left = 0;
       var top = coords.top + target.offsetHeight/2 -tooltipElem.offsetHeight/2;
       // if (top < 0) {
