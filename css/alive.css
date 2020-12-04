@@ -360,6 +360,7 @@ canvas {
   background-position: top;
 }
 
+
 .demonstrator_icon{
   background-image: url(../img/demonstrator-11.png);
   background-size: cover;
@@ -395,7 +396,21 @@ canvas {
     flex-direction: column;
     align-items: center;
 }
-.research_category>p{
+
+.research_icon:hover +.research_category,
+.demonstrator_icon:hover +.demonstrator_category,
+.vision_icon:hover +.vision_category,
+.exhibition_icon:hover +.exhibition_category,
+.dialogue_icon:hover +.dialogue_category,
+.update_icon:hover +.update_category  {
+  opacity: 1;
+}
+
+.research_category, .demonstrator_category, .vision_category, .exhibition_category, .dialogue_category, .update_category {
+  opacity: 0;
+}
+
+.research_category>p, .demonstrator_category>p, .vision_category>p, .exhibition_category>p, .dialogue_category>p, .update_category>p {
   font-family: 'Bitter', serif;
   font-style: normal;
   font-size: 1rem;
@@ -652,6 +667,7 @@ margin-bottom: 0;
     font-weight: 400;
     color: #485E1E;
   }
+  
   .wp-bootstrap-blocks-row>div>h2{
       font-family: 'Bitter', serif;
       text-transform: uppercase;
