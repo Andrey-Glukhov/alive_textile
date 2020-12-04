@@ -35,7 +35,7 @@ nav{
 position: fixed;
 top: auto;
 left: auto;
-width: 100%;
+/* width: 100%; */
 min-height: 40px;
 z-index: 110;
 }
@@ -423,8 +423,9 @@ timeline
 --------------------------------------------------------------*/
 .timeline{
   width: 100%;
-  min-height: 90vh;
+  min-height: 100vh;
   height: 100%;
+  position: relative;
 }
 .timeline_row{
   padding: 40px 0 0 0;
