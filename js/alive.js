@@ -150,7 +150,7 @@ console.log('init');
         }
       });
     });
-    setTimeout(setBack, 3300); // unset background alive_opener
+    //setTimeout(setBack, 3300); // unset background alive_opener
   }
 
 }
@@ -169,7 +169,8 @@ $(document).ready(function () {
 });
 
 function setBack () {
-  $('.alive_opener').css('background-color','inherit');
+  //$('.alive_opener').css('background-color','inherit');
+  gsap.to('.alive_opener', 1.5, {backgroundColor: 'rgba(213, 197, 179,0)' }); 
 }
 function initP5() {
   if ($('.timeline').length) {
@@ -214,8 +215,9 @@ var aliveSketch = function(p) {
 
     var cnv = p.createCanvas(clientWidth, clientHeight);
     cnv.parent("opener_canvas");
-    p.background(213, 197,179);
+    p.background(0);
     p.image(img, 0, 0);
+    setBack();
     p.smooth();
     p.noStroke();
 
@@ -290,8 +292,10 @@ var singleSketch = function(p) {
       if (countPoint <= 0) {
       for (var indBlank = 0; indBlank < 3; indBlank++) {
         pointBlank[indBlank] = getPosition(pointBlank[indBlank],stepSize, p.width, p.height);
-        p.fill(0, 0, 0, 0);
+       // p.fill(255, 255, 255, 0);
+       p.erase();
         p.ellipse(pointBlank[indBlank].posX+stepSize/2, pointBlank[indBlank].posY+stepSize/2, diameter, diameter);
+       p.noErase(); 
       }
       } else {
         countPoint--;
