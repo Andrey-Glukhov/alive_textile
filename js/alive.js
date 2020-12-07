@@ -92,7 +92,7 @@ function initScipt() {
         var catName = 'overlay_icon_' + $(this).parent().parent().data('category');
         if ($(this).hasClass(catName)){
           $(this).css('background-position','bottom');
-        } 
+        }
         if ($(this).parent().siblings('.collapse').hasClass('show')) {
           $(this).data('open', 'close');
           $(this).parent().siblings('.collapse').collapse('hide');
@@ -100,7 +100,7 @@ function initScipt() {
         } else {
           $(this).data('open', 'open');
           $(this).parent().siblings('.collapse').collapse('show');
-        }  
+        }
         //$(this).parent().siblings('.collapse').children('.column_event');
       });
      });
@@ -117,9 +117,9 @@ function initScipt() {
       document.body.append(tooltipElem);
       var coords = target.getBoundingClientRect();
       if ($(target).parent().siblings('.row').children('.column_ongoing').children().length) {
-        var left = coords.left + (target.offsetWidth )/2 + 20;//- tooltipElem.offsetWidth) / 2;
+        var left = coords.left + (target.offsetWidth )/2 - tooltipElem.offsetWidth - 20;//- tooltipElem.offsetWidth) / 2;
       } else {
-        var left = coords.left + (target.offsetWidth )/2 - tooltipElem.offsetWidth - 20;
+        var left = coords.left + (target.offsetWidth )/2 + 20;
       }
       //if (left < 0) left = 0;
       var top = coords.top + target.offsetHeight/2 -tooltipElem.offsetHeight/2;
@@ -192,7 +192,7 @@ $(document).ready(function () {
 
 function setBack () {
   //$('.alive_opener').css('background-color','inherit');
-  gsap.to('.alive_opener', 1.5, {backgroundColor: 'rgba(213, 197, 179,0)' }); 
+  gsap.to('.alive_opener', 1.5, {backgroundColor: 'rgba(213, 197, 179,0)' });
 }
 function initP5() {
   if ($('.timeline').length) {
@@ -316,7 +316,7 @@ var singleSketch = function(p) {
        // p.fill(255, 255, 255, 0);
        p.erase();
         p.ellipse(pointBlank[indBlank].posX+stepSize/2, pointBlank[indBlank].posY+stepSize/2, diameter, diameter);
-       p.noErase(); 
+       p.noErase();
       }
       } else {
         countPoint--;

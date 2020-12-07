@@ -349,12 +349,12 @@ canvas {
 .research_icon, .demonstrator_icon, .exhibition_icon, .vision_icon, .dialogue_icon, .update_icon{
   height: 45px;
   width: 45px;
-  margin: 10px 0;
+  margin: 10px 0 4px 0;
   cursor: pointer;
 }
 
 .research_icon{
-  background-image: url(../img/icons_samples-09.png);
+  background-image: url(../img/icons_size-13.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -362,31 +362,31 @@ canvas {
 
 
 .demonstrator_icon{
-  background-image: url(../img/demonstrator-11.png);
+  background-image: url(../img/icons_size-11.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .exhibition_icon{
-  background-image: url(../img/icons_samples-06.png);
+  background-image: url(../img/icons_size-15.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .vision_icon{
-  background-image: url(../img/icons_samples-10.png);
+  background-image: url(../img/icons_size-14.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .dialogue_icon{
-  background-image: url(../img/dialogues-02.png);
+  background-image: url(../img/icons_size-12.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
 }
 .update_icon{
-  background-image: url(../img/icons_samples-08.png);
+  background-image: url(../img/icons_size-16.png);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: top;
@@ -415,7 +415,7 @@ canvas {
   font-style: normal;
   font-size: 1rem;
   font-weight: 400;
-  color: #ffffff;
+  color: #485e1e;
 }
 .research_category{
   opacity: 0;
@@ -477,22 +477,22 @@ timeline
   display: none;
 }
 .overlay_icon_research{
-  background-image: url(../img/icons_samples-09.png);
+  background-image: url(../img/icons_size-13.png);
 }
 .overlay_icon_demonstrators{
-  background-image: url(../img/icons_samples-07.png);
+  background-image: url(../img/icons_size-11.png);
 }
 .overlay_icon_exhibitions{
-  background-image: url(../img/icons_samples-06.png);
+  background-image: url(../img/icons_size-15.png);
 }
 .overlay_icon_visions{
-  background-image: url(../img/icons_samples-10.png);
+  background-image: url(../img/icons_size-14.png);
 }
 .overlay_icon_dialogues{
-  background-image: url(../img/icons_samples-08.png);
+  background-image: url(../img/icons_size-12.png);
 }
 .overlay_icon_updates{
-  background-image: url(../img/icons_samples-08.png);
+  background-image: url(../img/icons_size-16.png);
 }
 
 .overlay_icon_research, .overlay_icon_demonstrators, .overlay_icon_exhibitions, .overlay_icon_visions, .overlay_icon_dialogues, .overlay_icon_updates{
@@ -507,6 +507,15 @@ timeline
   font-family: 'Bitter', serif;
   font-weight: 400;
   font-size: 2rem;
+  color: #ffffff;
+}
+.tooltip_r_d{
+  background: none !important;
+  border: none !important;
+  box-shadow: none !important;
+  font-family: 'Bitter', serif;
+  font-weight: 400;
+  font-size: 1.2rem;
   color: #ffffff;
 }
 /*--------------------------------------------------------------
@@ -668,7 +677,7 @@ margin-bottom: 0;
     font-weight: 400;
     color: #485E1E;
   }
-  
+
   .wp-bootstrap-blocks-row>div>h2{
       font-family: 'Bitter', serif;
       text-transform: uppercase;
@@ -683,6 +692,13 @@ margin-bottom: 0;
       height: 100vh;
       position: fixed;
       /* z-index: -1; */
+    }
+    .wp-block-image>img{
+      width: 100%;
+      height: auto;
+    }
+    .wp-bootstrap-blocks-row{
+      padding: 35px 0;
     }
 /*--------------------------------------------------------------
 about

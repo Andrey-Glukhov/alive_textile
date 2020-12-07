@@ -10,25 +10,25 @@
 				</div>
 				<div class="icon_wraper">
 					<div class="demonstrator_icon filter" data-category="demonstrators" data-press="no"></div>
-					<div class="demonstrator_category"><p>demonstrator</p></div>
+					<div class="demonstrator_category"><p>demonstrators</p></div>
 				</div>
 				<div class="icon_wraper">
 					<div class="vision_icon filter" data-category="visions" data-press="no"></div>
-					<div class="vision_category"><p>vision</p></div>
+					<div class="vision_category"><p>visions</p></div>
 				</div>
 				</div>
 			<div class="col-6 ongoing_header category_column">
 				<div class="icon_wraper">
 					<div class="exhibition_icon filter" data-category="exhibitions" data-press="no"></div>
-					<div class="exhibition_category"><p>exhibition</p></div>
+					<div class="exhibition_category"><p>exhibitions</p></div>
 				</div>
 				<div class="icon_wraper">
 					<div class="dialogue_icon filter" data-category="dialogues" data-press="no"></div>
-					<div class="dialogue_category"><p>dialogue</p></div>
+					<div class="dialogue_category"><p>dialogues</p></div>
 				</div>
 				<div class="icon_wraper">
 					<div class="update_icon filter" data-category="updates"data-press="no"></div>
-					<div class="update_category"><p>update</p></div>
+					<div class="update_category"><p>updates</p></div>
 				</div>
 			</div>
 		</div>
