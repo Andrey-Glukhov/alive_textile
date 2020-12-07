@@ -36,9 +36,12 @@ barba.init({
     },
     enter(data) {
       window.scrollTo(0,0);
+      if ( $('.menu').hasClass('active')) {
+        $('.menu').removeClass('active');
+        $('.animated-icon1').removeClass('open'); 
+      }
     },
      after(data) {
-
       const done = this.async();
       contentAnimation();
      setTimeout(function() {
@@ -53,19 +56,41 @@ barba.init({
     // }
   }]
 });
+
 function initScipt() {
   if ($('.timeline').length) {
 
     // ScrollMagic setup
      controller = new ScrollMagic.Controller();
+
      gsap.defaultOverwrite = false;
      var tweenSet = gsap.fromTo('.menu_sticker', {top:'-150%'}, {top:0, duration: 0.5} );
-     var scene = new ScrollMagic.Scene({
+     //var scene = 
+     var sceneOffset =  document.getElementById('opener_canvas').clientHeight/2;
+     new ScrollMagic.Scene({
         triggerElement: ".timeline",
-        triggerHook: 0.1})
+        triggerHook: 0.05 //,
+        //offset: sceneOffset//,
+        //duration: sceneOffset
+        })
+        .on("start", function (event) {
+          if (event.scrollDirection === "FORWARD") {
+            $('.alive_opener').addClass('freezed');
+          } else {
+            $('.alive_opener').removeClass('freezed');
+          }
+        })
+          //.setClassToggle('.alive_opener', 'freezed')
+        .addIndicators() // add indicators (requires plugin)
+        .addTo(controller);
+
+        new ScrollMagic.Scene({
+          triggerElement: ".timeline",
+          triggerHook: 0.1})
           .setTween(tweenSet)
-					.addIndicators() // add indicators (requires plugin)
-          .addTo(controller);
+          .addIndicators() // add indicators (requires plugin)
+              .addTo(controller);
+    
       // collapse elements
       $('.r_d').each(function() {
         $(this).mouseover(function(evt) {
@@ -237,9 +262,9 @@ var aliveSketch = function(p) {
 
     var cnv = p.createCanvas(clientWidth, clientHeight);
     cnv.parent("opener_canvas");
-    p.background(0);
-    p.image(img, 0, 0);
-    setBack();
+    p.background(0, 0, 0, 0);
+    //p.image(img, 0, 0);
+    //setBack();
     p.smooth();
     p.noStroke();
 
@@ -255,13 +280,21 @@ var aliveSketch = function(p) {
     for (var ind = 0; ind < 3; ind++) {
       pointColor[ind] =  getPosition(pointColor[ind],stepSize, p.width, p.height);
       p.fill(190, 255, 60, 70);
+      if (pointColor[ind].posX+stepSize/2 < p.width/2 && pointColor[ind].posY+stepSize/2 > p.height/2) {
+        p.fill(213, 197, 179);
+      } else {
+        p.fill(190, 255, 60, 70);
+      }
       p.ellipse(pointColor[ind].posX+stepSize/2, pointColor[ind].posY+stepSize/2, diameter, diameter);
     }
       if (countPoint <= 0) {
       for (var indBlank = 0; indBlank < 3; indBlank++) {
         pointBlank[indBlank] =  getPosition(pointBlank[indBlank],stepSize, p.width, p.height);
-        p.fill(213, 197, 179);
+        // p.fill(213, 197, 179);
+        // p.ellipse(pointBlank[indBlank].posX+stepSize/2, pointBlank[indBlank].posY+stepSize/2, diameter, diameter);
+        p.erase();
         p.ellipse(pointBlank[indBlank].posX+stepSize/2, pointBlank[indBlank].posY+stepSize/2, diameter, diameter);
+       p.noErase(); 
       }
       } else {
         countPoint--;
