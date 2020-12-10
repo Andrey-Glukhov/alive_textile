@@ -196,7 +196,16 @@ function initScipt() {
     //setTimeout(setBack, 3300); // unset background alive_opener
   }
 
+  if ($('.people-background').length) {
+    $('.portret a').click(function(){
+      var select = $(this).attr('href');
+      console.log(select);
+      $('.profile').collapse('hide');
+      $(select).collapse('show');
+    });
+  }
 }
+
 $(document).ready(function () {
   $('.menu-btn').on('click', function () {
     if ($('.animated-icon1').hasClass('open')) {
