@@ -58,4 +58,18 @@ get_header(); ?>
 </section>
 <?php endwhile; ?>
 <?php endif; ?>
+
 <?php get_footer(); ?>
+<script>
+var controller_1 = new ScrollMagic.Controller();
+
+$('.for_animation').each(function(){
+	var ourScene = new ScrollMagic.Scene({
+		triggerElement: this,
+		triggerHook: 0.7
+	})
+	.setClassToggle( this, 'animated')
+	.addTo(controller_1);
+});
+
+</script>
