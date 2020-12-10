@@ -828,6 +828,24 @@ team
     cursor: pointer;
     transform: translateY(-50%);
   }
+  .descr>p{
+    padding-right: 40px;
+    font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #485E1E;
+  }
+  .portret>a>p{
+    opacity: 0;
+    padding-right: 40px;
+    font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #485E1E;
+  }
+  .portret>a>img:hover +p{
+    opacity: 1;
+  }
 /*--------------------------------------------------------------
 subscribe
 --------------------------------------------------------------*/

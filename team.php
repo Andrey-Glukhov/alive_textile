@@ -55,7 +55,7 @@ get_header(); ?>
       <img src="<?php the_sub_field('portret'); ?>"/>
       <p><?php the_sub_field('name'); ?></p>
     </a></div>
-    <?php $profile .= '<div class="profile collapse" data-parent="#accordion"  id = "' . str_replace(' ', '', get_sub_field('name')) . '">' . get_sub_field('description') . '</div>'; ?>
+    <?php $profile .= '<div class="row justify-content-end profile collapse" data-parent="#accordion"  id = "' . str_replace(' ', '', get_sub_field('name')) . '"><div class="descr col-8">' . get_sub_field('description') . '</div></div>'; ?>
 
   <?php endwhile;?>
 </div>
