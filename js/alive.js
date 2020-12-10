@@ -4,11 +4,9 @@ var myp5Object ;
 function pageTransition(){
   var tl = gsap.timeline();
   tl.to('.page_transition', {duration:1.5, scaleX: 1, transformOrigin: "left"});
-  //tl.to('.page_transition', {duration: .5, scaleX: 0, delay: .1, transformOrigin: "right"});
 };
 function contentAnimation(){
   var tl = gsap.timeline();
-  //tl.from('h2', {duration: 1.5, translateY: 50, opacity: 0})
   tl.to('.page_transition', {duration: 1.5, scaleX: 0, delay: .1, transformOrigin: "right"});
 };
 
@@ -81,15 +79,15 @@ function initScipt() {
           }
         })
           //.setClassToggle('.alive_opener', 'freezed')
-        .addIndicators() // add indicators (requires plugin)
+        //.addIndicators() // add indicators (requires plugin)
         .addTo(controller);
 
         new ScrollMagic.Scene({
           triggerElement: ".timeline",
           triggerHook: 0.1})
           .setTween(tweenSet)
-          .addIndicators() // add indicators (requires plugin)
-              .addTo(controller);
+          //.addIndicators() // add indicators (requires plugin)
+          .addTo(controller);
     
       // collapse elements
       $('.r_d').each(function() {
@@ -99,8 +97,6 @@ function initScipt() {
           }
           var catName = 'overlay_icon_' + $(this).parent().parent().data('category');
           if ( ! $(this).hasClass(catName)){
-            //gsap.to($(this).removeClass(catName), 0.3, {scale:1});
-            // gsap.to($('.r_d').removeClass('overlay_icon_research overlay_icon_demonstrators overlay_icon_exhibitions overlay_icon_visions overlay_icon_dialogues overlay_icon_updates'), 0.2, {scale:1});
             gsap.to($(this).addClass(catName), 0.3, {scale:3});
           };
         });
@@ -263,7 +259,7 @@ var aliveSketch = function(p) {
     var cnv = p.createCanvas(clientWidth, clientHeight);
     cnv.parent("opener_canvas");
     p.background(0, 0, 0, 0);
-    //p.image(img, 0, 0);
+    p.image(img, 0, 0);
     //setBack();
     p.smooth();
     p.noStroke();
@@ -312,6 +308,7 @@ var singleSketch = function(p) {
   var pointBlank = []
   var countPoint = 10000;
   var speed = 150;
+  var colorDraw;
   var img;
 
   p.preload = function() {
@@ -321,7 +318,12 @@ var singleSketch = function(p) {
   p.setup =function() {
     var clientHeight = document.getElementById('opener_canvas').clientHeight;
     var clientWidth = document.getElementById('opener_canvas').clientWidth;
-
+    var ongoingTags = document.querySelectorAll('.single_ongoing_type');
+    if (ongoingTags.length) {
+      colorDraw = p.color(213, 197,179);
+    } else {
+     colorDraw = p.color(190, 255, 60, 70);
+    }
     var cnv = p.createCanvas(clientWidth, clientHeight);
     cnv.parent("opener_canvas");
     p.background(0, 0, 0, 0);
@@ -340,7 +342,8 @@ var singleSketch = function(p) {
     for (var i=0; i<=speed; i++) {
     for (var ind = 0; ind < 3; ind++) {
       pointColor[ind] = getPosition(pointColor[ind],stepSize, p.width, p.height);
-      p.fill(190, 255, 60, 70);
+      //p.fill(190, 255, 60, 70);
+      p.fill(colorDraw);
       p.ellipse(pointColor[ind].posX+stepSize/2, pointColor[ind].posY+stepSize/2, diameter, diameter);
     }
       if (countPoint <= 0) {
