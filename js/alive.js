@@ -36,7 +36,7 @@ barba.init({
       window.scrollTo(0,0);
       if ( $('.menu').hasClass('active')) {
         $('.menu').removeClass('active');
-        $('.animated-icon1').removeClass('open'); 
+        $('.animated-icon1').removeClass('open');
       }
     },
      after(data) {
@@ -63,7 +63,7 @@ function initScipt() {
 
      gsap.defaultOverwrite = false;
      var tweenSet = gsap.fromTo('.menu_sticker', {top:'-150%'}, {top:0, duration: 0.5} );
-     //var scene = 
+     //var scene =
      var sceneOffset =  document.getElementById('opener_canvas').clientHeight/2;
      new ScrollMagic.Scene({
         triggerElement: ".timeline",
@@ -88,7 +88,7 @@ function initScipt() {
           .setTween(tweenSet)
           //.addIndicators() // add indicators (requires plugin)
           .addTo(controller);
-    
+
       // collapse elements
       $('.r_d').each(function() {
         $(this).mouseover(function(evt) {
@@ -199,7 +199,7 @@ function initScipt() {
   if ($('.people-background').length) {
     $('.portret a').click(function(){
       var select = $(this).attr('href');
-      console.log(select);
+      //console.log(select);
       $('.profile').collapse('hide');
       $(select).collapse('show');
     });
@@ -299,7 +299,7 @@ var aliveSketch = function(p) {
         // p.ellipse(pointBlank[indBlank].posX+stepSize/2, pointBlank[indBlank].posY+stepSize/2, diameter, diameter);
         p.erase();
         p.ellipse(pointBlank[indBlank].posX+stepSize/2, pointBlank[indBlank].posY+stepSize/2, diameter, diameter);
-       p.noErase(); 
+       p.noErase();
       }
       } else {
         countPoint--;

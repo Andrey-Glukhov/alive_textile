@@ -6,7 +6,9 @@ get_header(); ?>
 
 <div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="about">
-<div class="test">TEST</div>
+<div class="container-fluid about_background">
+
+</div>
 </main>
 
 <?php get_footer(); ?>

@@ -60,6 +60,7 @@ get_header(); ?>
 <?php endif; ?>
 
 <?php get_footer(); ?>
+
 <script>
 var controller_1 = new ScrollMagic.Controller();
 
@@ -68,7 +69,7 @@ $('.for_animation').each(function(){
 		triggerElement: this,
 		triggerHook: 0.7
 	})
-	.setClassToggle( this, 'animated')
+	.setClassToggle( $(this)[0], 'animated')
 	.addTo(controller_1);
 });
 
