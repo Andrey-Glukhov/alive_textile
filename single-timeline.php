@@ -68,7 +68,7 @@ $('.for_animation').each(function(){
 		triggerElement: this,
 		triggerHook: 0.7
 	})
-	.setClassToggle( this, 'animated')
+	.setClassToggle( $(this)[0], 'animated')
 	.addTo(controller_1);
 });
 

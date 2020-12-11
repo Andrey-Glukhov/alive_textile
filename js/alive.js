@@ -199,7 +199,7 @@ function initScipt() {
   if ($('.people-background').length) {
     $('.portret a').click(function(){
       var select = $(this).attr('href');
-      console.log(select);
+      //console.log(select);
       $('.profile').collapse('hide');
       $(select).collapse('show');
     });
