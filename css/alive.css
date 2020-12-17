@@ -505,7 +505,7 @@ timeline
 .secure_ongoing_background{
   background-color: #D5C5B3;
   height: 100%;
- 
+
 }
 .item_hide {
   display: none;
@@ -712,14 +712,16 @@ single_project
   font-weight: 400;
   color: #485E1E;
 }
-
+.wp-bootstrap-blocks-row>div>p>a{
+  color: #485E1E;
+  text-decoration: underline;
+}
 .wp-bootstrap-blocks-row>div>h2{
   font-family: 'Bitter', serif;
   text-transform: uppercase;
-  font-style: italic;
-  font-size: 2.3rem;
-  font-weight: 500;
-  color: #485E1E;
+  font-size: 2rem;
+  font-weight: 100;
+  color: #ffffff;
 }
 
 .single_opener {
@@ -733,7 +735,7 @@ single_project
   height: auto;
 }
 .wp-bootstrap-blocks-row{
-  padding: 35px 0;
+  padding: 10px 0;
 }
 
 .for_animation{
@@ -754,6 +756,80 @@ about
   height: 100%;
   background: rgb(190,253,51);
   background: linear-gradient(90deg, rgba(190,253,51,1) 37%, rgba(211,195,177,1) 100%);
+}
+.about_header{
+  padding-right: 0;
+}
+.about_header>h1{
+  font-family: 'Bitter', serif;
+  font-size: 3rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin: 20px 0 25px 0;
+  border-bottom: 1.5px solid #ffffff;
+}
+.about_left{
+  overflow:hidden;
+  height:100vh;
+  padding: 0;
+}
+.inner_left{
+  overflow:auto;
+  height:100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.about_right{
+  overflow:hidden;
+  height:100vh;
+}
+.inner_right{
+  overflow:auto;
+  height:100%;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+.inner_right::-webkit-scrollbar {
+  display: none;
+}
+.inner_left::-webkit-scrollbar {
+  display: none;
+}
+.padding_exception_right{
+  padding-right: 0px;
+}
+.padding_exception_left{
+    padding-left: 0px;
+}
+.about_partners>p{
+  font-family: 'Bitter', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 50px;
+  margin-bottom: 20px;
+line-height: 1.4rem;
+}
+.about_partners>img{
+  width: 100%;
+  height: auto;
+  margin: 7px 0;
+}
+.about_press{
+  margin-top: 20px;
+}
+.about_press>p{
+  font-family: 'Bitter', serif;
+  font-size: 1rem;
+  font-weight: 400;
+  color: #ffffff;
+  margin-top: 20px;
+  margin-bottom: 20px;
+line-height: 1.4rem;
+}
+.about_press>p>a{
+  color: #ffffff;
+  text-decoration: underline;
 }
 /*--------------------------------------------------------------
 contact
@@ -926,6 +1002,31 @@ publications
   .website_title>h1{
     font-size: 4rem;
   }
+  .padding_exception_right{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .padding_exception_left{
+    padding-right: 0px;
+      padding-left: 0px;
+  }
+  .about_header>h1{
+    font-size: 2.4rem;
+  }
+  .inner_left{
+    margin-top: 30px;
+  }
+  .about_left{
+    overflow:scroll;
+    height: 100%;
+  }
+  .about_right{
+    overflow:scroll;
+    height: 100%;
+  }
+  .wp-bootstrap-blocks-row>div>h2{
+    font-size: 1.4rem;
+  }
 }
 /*sm*/
 @media screen and (min-width: 576px) and (max-width: 768px) {
@@ -936,6 +1037,27 @@ publications
   .website_title>h1{
     font-size: 5rem;
   }
+  .padding_exception_right{
+    padding-right: 0px;
+    padding-left: 0px;
+  }
+  .padding_exception_left{
+      padding-left: 0px;
+  }
+  .about_header>h1{
+    font-size: 3rem;
+  }
+  .wp-bootstrap-blocks-row>div>h2{
+    font-size: 2rem;
+  }
+  .about_left{
+    overflow:scroll;
+    height: 100%;
+  }
+  .about_right{
+    overflow:scroll;
+    height: 100%;
+  }
 }
 /*md*/
 @media screen and (min-width: 768px) and (max-width: 992px){
@@ -945,6 +1067,26 @@ publications
   }
   .website_title>h1{
     font-size: 8rem;
+  }
+  .padding_exception_right{
+    padding-right: 0px;
+  }
+  .padding_exception_left{
+      padding-left: 0px;
+  }
+  .about_header>h1{
+    font-size: 3rem;
+  }
+  .wp-bootstrap-blocks-row>div>h2{
+    font-size: 2rem;
+  }
+  .about_left{
+    overflow:hidden;
+    height: 100vh;
+  }
+  .about_right{
+    overflow:hidden;
+    height:100vh;
   }
 }
 
@@ -957,5 +1099,24 @@ publications
   .website_title>h1{
     font-size: 11rem;
   }
-
+  .padding_exception_right{
+    padding-right: 0px;
+  }
+  .padding_exception_left{
+      padding-left: 0px;
+  }
+  .about_header>h1{
+    font-size: 3rem;
+  }
+  .wp-bootstrap-blocks-row>div>h2{
+    font-size: 2rem;
+  }
+  .about_left{
+    overflow:hidden;
+    height: 100vh;
+  }
+  .about_right{
+    overflow:hidden;
+    height:100vh;
+  }
 }
