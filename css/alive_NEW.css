@@ -230,7 +230,17 @@ home page
   background-color: #D5C5B3;
   position: relative;
  }
-
+.coming_soon{
+	position: fixed;
+    top: 10%;
+    left: 5%;
+    z-index: 1000;
+}
+.coming_soon>img{
+	width: 20vw;
+    height: auto;
+    transform: rotate(-30deg);
+}
 .alive_opener{
   position: absolute;
   top: 0;
@@ -385,7 +395,6 @@ canvas {
   background-repeat: no-repeat;
   background-position: top;
 }
-
 
 .demonstrator_icon{
   background-image: url(../img/icons_size-11.png);
@@ -745,6 +754,9 @@ single_project
   opacity: 1;
   transform: translateY(0);
 }
+.gallery_rows{
+  padding: 10px 0 !important;
+}
 /*--------------------------------------------------------------
 about
 --------------------------------------------------------------*/
@@ -789,25 +801,25 @@ team
     padding: 25px 0;
   }
   .studio_samira_boon{
-    background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/samira-01-1.png);
+    background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/samira-01-1.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
   .vrije_universiteit_amsterdam{
-    background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/vu-01.png);
+    background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/vu-01.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
   .waag_amsterdam{
-    background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/waag-01.png);
+    background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/waag-01.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
   }
   .interns{
-    background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/intern-02-01.png);
+    background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/intern-02-01.png);
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
