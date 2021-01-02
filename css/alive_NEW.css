@@ -67,7 +67,7 @@ nav{
 }
 .menu-btn {
   position: fixed;
-  margin: 25px 15px;
+  margin: 20px 15px;
   right: 0;
   top:0;
   z-index: 100;
@@ -106,7 +106,7 @@ nav{
 }
 .animated-icon1{
   width: 35px;
-  height: 40px;
+  height: 20px;
   margin: 0px;
   -webkit-transform: rotate(0deg);
   -moz-transform: rotate(0deg);
@@ -145,11 +145,11 @@ nav{
 }
 
 .animated-icon1 span:nth-child(2) {
-  top: 11px;
+  top: 10px;
 }
 
 .animated-icon1 span:nth-child(3) {
-  top: 22px;
+  top: 20px;
 }
 
 .animated-icon1.open span:nth-child(1) {
@@ -229,8 +229,18 @@ home page
 .home_main {
   background-color: #D5C5B3;
   position: relative;
+ }
+.coming_soon{
+	position: fixed;
+    top: 10%;
+    left: 5%;
+    z-index: 1000;
 }
-
+.coming_soon>img{
+	width: 20vw;
+    height: auto;
+    transform: rotate(-30deg);
+}
 .alive_opener{
   position: absolute;
   top: 0;
@@ -386,7 +396,6 @@ canvas {
   background-position: top;
 }
 
-
 .demonstrator_icon{
   background-image: url(../img/icons_size-11.png);
   background-size: cover;
@@ -501,11 +510,11 @@ timeline
   background-color:rgb(196, 255, 0);
   /*background-color: #e5ff80;*/
   height: 100%;
-}
+ }
 .secure_ongoing_background{
   background-color: #D5C5B3;
   height: 100%;
-
+ 
 }
 .item_hide {
   display: none;
@@ -712,16 +721,14 @@ single_project
   font-weight: 400;
   color: #485E1E;
 }
-.wp-bootstrap-blocks-row>div>p>a{
-  color: #485E1E;
-  text-decoration: underline;
-}
+
 .wp-bootstrap-blocks-row>div>h2{
   font-family: 'Bitter', serif;
   text-transform: uppercase;
-  font-size: 2rem;
-  font-weight: 100;
-  color: #ffffff;
+  font-style: italic;
+  font-size: 2.3rem;
+  font-weight: 500;
+  color: #485E1E;
 }
 
 .single_opener {
@@ -735,7 +742,7 @@ single_project
   height: auto;
 }
 .wp-bootstrap-blocks-row{
-  padding: 10px 0;
+  padding: 35px 0;
 }
 
 .for_animation{
@@ -747,6 +754,9 @@ single_project
   opacity: 1;
   transform: translateY(0);
 }
+.gallery_rows{
+  padding: 10px 0 !important;
+}
 /*--------------------------------------------------------------
 about
 --------------------------------------------------------------*/
@@ -757,108 +767,10 @@ about
   background: rgb(190,253,51);
   background: linear-gradient(90deg, rgba(190,253,51,1) 37%, rgba(211,195,177,1) 100%);
 }
-.about_header{
-  padding-right: 0;
-}
-.about_header>h1{
-  font-family: 'Bitter', serif;
-  font-size: 3rem;
-  font-weight: 400;
-  color: #ffffff;
-  margin: 13px 0 25px 0;
-  border-bottom: 1.5px solid #ffffff;
-}
-.about_left{
-  overflow:hidden;
-  height:100vh;
-  padding: 0;
-}
-.inner_left{
-  overflow:auto;
-  height:100%;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.about_right{
-  overflow:hidden;
-  height:100vh;
-}
-.inner_right{
-  overflow:auto;
-  height:100%;
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-}
-.inner_right::-webkit-scrollbar {
-  display: none;
-}
-.inner_left::-webkit-scrollbar {
-  display: none;
-}
-.padding_exception_right{
-  padding-right: 0px;
-}
-.padding_exception_left{
-  padding-left: 0px;
-}
-.about_partners>p{
-  font-family: 'Bitter', serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #ffffff;
-  margin-top: 50px;
-  margin-bottom: 20px;
-  line-height: 1.4rem;
-}
-.about_partners>img{
-  width: 100%;
-  height: auto;
-  margin: 7px 0;
-}
-.about_press{
-  margin-top: 20px;
-}
-.about_press>p{
-  font-family: 'Bitter', serif;
-  font-size: 1rem;
-  font-weight: 400;
-  color: #ffffff;
-  margin-top: 20px;
-  margin-bottom: 20px;
-  line-height: 1.4rem;
-}
-.about_press>p>a{
-  color: #ffffff;
-  text-decoration: underline;
-}
-.return_arrow{
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  background-image: url(../img/arrow_g_on_w-17.png);
-  background-repeat: no-repeat;
-  background-size: contain;
-  z-index: 1;
-  margin: 20px 15px;
-}
-.home_link{
-  cursor: pointer;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 40px;
-  height: 40px;
-  z-index: 2;
-  margin: 20px 15px;
-}
 /*--------------------------------------------------------------
 contact
 --------------------------------------------------------------*/
-.map{
 
-}
 /*--------------------------------------------------------------
 team
 --------------------------------------------------------------*/
@@ -883,73 +795,73 @@ team
   height: auto;
 }
 .profile{position: relative;
-  z-index: 2;
-}
-.organization_row{
-  padding: 25px 0;
-}
-.studio_samira_boon{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/samira-01-1.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.vrije_universiteit_amsterdam{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/vu-01.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.waag_amsterdam{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/waag-01.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.interns{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/intern-02-01.png);
-  background-size: contain;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-.team_dot{
-  position: absolute;
-  margin-left: auto;
-  margin-right: auto;
-  top: 50%;
-  right: -8px;
-  text-align: center;
-  width: 16px;
-  height: 16px;
-  border-radius: 16px;
-  background-color: #ffffff;
-  z-index: 2;
-  cursor: pointer;
-  transform: translateY(-50%);
-}
-.descr>p{
-  padding-right: 40px;
-  font-family: 'Bitter', serif;
-  font-size: 1rem;
-  font-weight: 500;
-  color: #485E1E;
-}
-.portret>a>p{
-  opacity: 0;
-  font-family: 'Bitter', serif;
-  font-size: 1rem;
-  font-weight: 700;
-  color: #485E1E;
-  text-decoration: none;
-  text-align: center;
-}
-.portret>a{
-  text-decoration: none;
-}
-.portret>a>img:hover +p{
-  opacity: 1;
-  text-decoration: none;
-}
+    z-index: 2;
+  }
+  .organization_row{
+    padding: 25px 0;
+  }
+  .studio_samira_boon{
+    background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/samira-01-1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .vrije_universiteit_amsterdam{
+    background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/vu-01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .waag_amsterdam{
+    background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/waag-01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .interns{
+    background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/intern-02-01.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+  .team_dot{
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    top: 50%;
+    right: -8px;
+    text-align: center;
+    width: 16px;
+    height: 16px;
+    border-radius: 16px;
+    background-color: #ffffff;
+    z-index: 2;
+    cursor: pointer;
+    transform: translateY(-50%);
+  }
+  .descr>p{
+    padding-right: 40px;
+    font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    color: #485E1E;
+  }
+  .portret>a>p{
+    opacity: 0;
+    font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #485E1E;
+    text-decoration: none;
+    text-align: center;
+  }
+  .portret>a{
+    text-decoration: none;
+  }
+  .portret>a>img:hover +p{
+    opacity: 1;
+    text-decoration: none;
+  }
 /*--------------------------------------------------------------
 subscribe
 --------------------------------------------------------------*/
@@ -1026,32 +938,6 @@ publications
   .website_title>h1{
     font-size: 4rem;
   }
-  .padding_exception_right{
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  .padding_exception_left{
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  .about_header>h1{
-    font-size: 2.4rem;
-    margin-right: 0;
-  }
-  .inner_left{
-    margin-top: 50px;
-  }
-  .about_left{
-    overflow:unset;
-    height: 100%;
-  }
-  .about_right{
-    overflow:unset;
-    height: 100%;
-  }
-  .wp-bootstrap-blocks-row>div>h2{
-    font-size: 1.4rem;
-  }
 }
 /*sm*/
 @media screen and (min-width: 576px) and (max-width: 768px) {
@@ -1062,28 +948,6 @@ publications
   .website_title>h1{
     font-size: 5rem;
   }
-  .padding_exception_right{
-    padding-right: 0px;
-    padding-left: 0px;
-  }
-  .padding_exception_left{
-    padding-left: 0px;
-  }
-  .about_header>h1{
-    font-size: 3rem;
-    margin-right: 50px;
-  }
-  .wp-bootstrap-blocks-row>div>h2{
-    font-size: 2rem;
-  }
-  .about_left{
-    overflow:unset;
-    height: 100%;
-  }
-  .about_right{
-    overflow:unset;
-    height: 100%;
-  }
 }
 /*md*/
 @media screen and (min-width: 768px) and (max-width: 992px){
@@ -1093,27 +957,6 @@ publications
   }
   .website_title>h1{
     font-size: 8rem;
-  }
-  .padding_exception_right{
-    padding-right: 0px;
-  }
-  .padding_exception_left{
-    padding-left: 0px;
-  }
-  .about_header>h1{
-    font-size: 3rem;
-    margin-right: 0;
-  }
-  .wp-bootstrap-blocks-row>div>h2{
-    font-size: 2rem;
-  }
-  .about_left{
-    overflow:hidden;
-    height: 100vh;
-  }
-  .about_right{
-    overflow:hidden;
-    height:100vh;
   }
 }
 
@@ -1126,25 +969,5 @@ publications
   .website_title>h1{
     font-size: 11rem;
   }
-  .padding_exception_right{
-    padding-right: 0px;
-  }
-  .padding_exception_left{
-    padding-left: 0px;
-  }
-  .about_header>h1{
-    font-size: 3rem;
-    margin-right: 0;
-  }
-  .wp-bootstrap-blocks-row>div>h2{
-    font-size: 2rem;
-  }
-  .about_left{
-    overflow:hidden;
-    height: 100vh;
-  }
-  .about_right{
-    overflow:hidden;
-    height:100vh;
-  }
+
 }
