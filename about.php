@@ -6,7 +6,8 @@ get_header(); ?>
 
 <div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="about">
-
+<a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
+  <div class="return_arrow"></div>
   <div class="container-fluid">
     <div class="row">
       <?php   $about = new WP_Query( array( 'page_id' => 5 ) );

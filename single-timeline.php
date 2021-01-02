@@ -5,7 +5,8 @@
 get_header(); ?>
 <div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="single">
-
+<a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
+<div class="return_arrow"></div>
 <?php if(have_posts() ) : while (have_posts() ) :the_post();
 	$cat = get_the_category();
 	if (count($cat) <=0 ) {
@@ -15,10 +16,9 @@ get_header(); ?>
 <section class="container-fluid single_item <?php the_field('event_type');?>_color">
 <div class="single_opener" id="opener_canvas"></div>
 <article class="row justify-content-center single_item_header">
-  <div class="col-md-1 arrow-pict"><a href="http://localhost:8888/alive_textile/wordpress/"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/arrow-01.png"/></a></div>
-  <div class="col-md-4 single_<?php the_field('event_type');?>_type"><h2><?php the_field('event_type');?></h2></div>
-  <div class="col-md-1 <?php echo $cat[0]->name;?>-pict"></div>
-  <div class="col-md-4"></div>
+  <div class="col-md-1"></div>
+  <div class="col-md-5 single_<?php the_field('event_type');?>_type"><h2><?php the_field('event_type');?></h2></div>
+  <div class="col-md-5"></div>
   <div class="col-md-1"></div>
 </article>
 
@@ -67,9 +67,10 @@ var controller_1 = new ScrollMagic.Controller();
 $('.for_animation').each(function(){
 	var ourScene = new ScrollMagic.Scene({
 		triggerElement: this,
-		triggerHook: 0.7
+		triggerHook: 0.8
 	})
 	.setClassToggle( $(this)[0], 'animated')
+	.addIndicators()
 	.addTo(controller_1);
 });
 
