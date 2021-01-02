@@ -261,7 +261,8 @@ function setupPattern() {
     var img1 = new Image();
     img1.onload = function() {
         //console.log(img1.naturalWidth + '===' + img1.naturalHeight + clientWidth + '---' + clientHeight);
-        ctx.drawImage(img1, 0, 0, img1.naturalWidth, img1.naturalHeight, 0, 0, clientWidth, clientHeight);
+        //ctx.drawImage(img1, 0, 0, img1.naturalWidth, img1.naturalHeight, 0, 0, clientWidth, clientHeight);
+        ctx.drawImage(img1, 0, 0);
         //if (!drawTimer) {
         drawTimer = setInterval(drawPattern, 150);
         //}
