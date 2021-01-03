@@ -53,12 +53,7 @@ barba.init({
             }, 1600);
             initScipt();
             setupPattern();
-            //initP5();
-
-        } //,
-        //  once(data) {
-        //   contentAnimation();
-        // }
+        }
     }]
 });
 
@@ -159,7 +154,6 @@ function initScipt() {
             }
             canvas.parentNode.removeChild(canvas);
             setupPattern();
-            //  initP5()
         });
 
         $('.category_column').children('.icon_wraper').children('.filter').click(function() {
@@ -188,13 +182,21 @@ function initScipt() {
                 }
             });
         });
-        //setTimeout(setBack, 3300); // unset background alive_opener
     }
-
+    if ($('.for_animation').length) {
+        controller = new ScrollMagic.Controller();
+        $('.for_animation').each(function() {
+            var ourScene = new ScrollMagic.Scene({
+                    triggerElement: this,
+                    triggerHook: 0.8
+                })
+                .setClassToggle($(this)[0], 'animated')
+                .addTo(controller);
+        });
+    }
     if ($('.people-background').length) {
         $('.portret a').click(function() {
             var select = $(this).attr('href');
-            //console.log(select);
             $('.profile').collapse('hide');
             $(select).collapse('show');
         });
@@ -213,14 +215,7 @@ $(document).ready(function() {
     });
     initScipt();
     setupPattern();
-    //initP5();
 });
-
-// function setBack() {
-//     //$('.alive_opener').css('background-color','inherit');
-//     gsap.to('.alive_opener', 1.5, { backgroundColor: 'rgba(213, 197, 179,0)' });
-// }
-
 
 function setupPattern() {
     var single = false;
@@ -253,28 +248,18 @@ function setupPattern() {
         });
     }
     if (single) {
-        // if (!drawTimer) {
         drawTimer = setInterval(drawPattern, 150);
-        //}
         return;
     }
     var img1 = new Image();
     img1.onload = function() {
-        //console.log(img1.naturalWidth + '===' + img1.naturalHeight + clientWidth + '---' + clientHeight);
-        //ctx.drawImage(img1, 0, 0, img1.naturalWidth, img1.naturalHeight, 0, 0, clientWidth, clientHeight);
         ctx.drawImage(img1, 0, 0);
-        //if (!drawTimer) {
         drawTimer = setInterval(drawPattern, 150);
-        //}
-
     };
     img1.src = 'http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/11/start.png';
 }
-//setupPattern();
-
 
 function drawPattern() {
-    //console.log('--' + clientHeight + '-- ' + clientWidth);
     var canvasWrapper = document.querySelector('.alive_opener');
     var canvasElement = document.querySelector('.alive_opener canvas');
     var ongoingTags = document.querySelectorAll('.single_ongoing_type');
@@ -293,11 +278,14 @@ function drawPattern() {
     if (single) {
         if (ongoingTags.length) {
             ctx.fillStyle = 'rgb(213, 197, 179)';
+            ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
         } else {
             ctx.fillStyle = 'rgba(190, 255, 60, 0.27)';
+            ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
         }
     } else {
         ctx.fillStyle = 'rgba(190, 255, 60, 0.27)';
+        ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
     }
     for (var i = 0; i <= speed; i++) {
         for (var ind = 0; ind < 3; ind++) {
@@ -305,11 +293,15 @@ function drawPattern() {
             if (!single) {
                 if (pointColor[ind].posX + stepSize / 2 < clientWidth / 2 && pointColor[ind].posY + stepSize / 2 > clientHeight / 2) {
                     ctx.fillStyle = 'rgb(213, 197, 179)';
+                    ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
                 } else {
                     ctx.fillStyle = 'rgba(190, 255, 60, 0.27)';
+                    ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
                 }
             }
+            ctx.shadowBlur = 1;
             ctx.fillRect(pointColor[ind].posX + stepSize / 2, pointColor[ind].posY + stepSize / 2, diameter, diameter);
+            ctx.shadowBlur = 0;
         }
         if (countPoint <= 0) {
             for (var indBlank = 0; indBlank < 3; indBlank++) {
@@ -349,5 +341,3 @@ function getPosition(pointArg, stepSize, pWidth, pHeight) {
 function randomInt(min, max) {
     return min + Math.floor((max - min) * Math.random());
 }
-
-//var myp5Object = new p5(aliveSketch);
