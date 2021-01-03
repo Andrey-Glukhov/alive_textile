@@ -3,6 +3,7 @@
 *Template Name: Project Template
 */
 get_header(); ?>
+
 <div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="single">
 <a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>

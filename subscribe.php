@@ -7,17 +7,36 @@ get_header(); ?>
 <div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="subscribe">
 
-<section class="container-fluid subscribe_page">
-  <article class="row justify-content-center single_item_header">
-    <div class="col-md-1 arrow-pict"><a href="http://localhost:8888/alive_textile/wordpress/"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/arrow-01.png"/></a></div>
-    <div class="col-md-4 single_type"><h2>LALALA</h2></div>
-    <div class="col-md-1 -pict"></div>
-    <div class="col-md-4"></div>
-    <div class="col-md-1"></div>
-  </article>
+<a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
+<div class="return_arrow"></div>
+<div class="container-fluid people-background">
+  <div class="row background-subscribe-row">
+    <div class="col-lg-3 col-md-4 col-sm-12 icons_side"></div>
+    <div class="col-lg-9 col-md-8 col-sm-12 form_side"></div>
+  </div>
+</div>
 
-<div class="row justify-content-center subscribe_row">
-  <div class="subscribe_form_bg col-md-5 col-sm-10 col-12">
+<div class="container-fluid subscribe_page">
+
+  <div class="row">
+    <div class="col-lg-3 col-md-4 col-sm-12"></div>
+    <div class="col-lg-9 col-md-8 col-sm-12 team_header">
+      <h1>SUBSCRIBE</h1>
+    </div>
+  </div>
+
+<div class="row subscribe_row">
+  <div class="col-lg-3 col-md-4 col-sm-12 newsletter">
+    <p>
+    If you wish to receive updates about ALIVE TEXTILES, please subscribe to
+    our Newsletter.
+  </p>
+  <div class="subscribe_icons">
+    <a href="https://www.facebook.com/studiosamiraboon/" target="_blank"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/facebook-square.png"/></a>
+    <a href="https://www.instagram.com/studiosamiraboon/" target="_blank"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/instagram-square.png"/></a>
+  </div>
+  </div>
+  <div class="subscribe_form_bg col-lg-9 col-md-8 col-sm-12">
     <!-- Begin Mailchimp Signup Form -->
     <link href="//cdn-images.mailchimp.com/embedcode/classic-10_7.css" rel="stylesheet" type="text/css">
     <div id="mc_embed_signup">
@@ -53,7 +72,7 @@ get_header(); ?>
 </div>
 
 
-</section>
+</div>
 
 
 </main>
