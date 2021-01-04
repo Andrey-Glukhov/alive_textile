@@ -53,8 +53,8 @@ get_header(); ?>
   </div>
 
   <div class="col-md-9 col-sm-7 col-7">
-    <div class="container" id="accordion">
-    <div class = "row">
+    <div class="container accordion_container" >
+    <div class = "row portret_row">
 
     <?php }
     ?>
@@ -63,7 +63,7 @@ get_header(); ?>
       <img src="<?php the_sub_field('portret'); ?>"/>
       <p><?php the_sub_field('name'); ?></p>
     </a></div>
-    <?php $profile .= '<div class="row justify-content-end profile collapse" data-parent="#accordion"  id = "' . str_replace(' ', '', get_sub_field('name')) . '"><div class="descr col-sm-7">' . get_sub_field('description') . '</div><div class="col-1 d-none d-sm-none d-md-block"></div></div>'; ?>
+    <?php $profile .= '<div class=" justify-content-end profile collapse col-12"  id = "' . str_replace(' ', '', get_sub_field('name')) . '"><div class="descr col-sm-7">' . get_sub_field('description') . '</div></div>'; ?>
 
   <?php endwhile;?>
 </div>
@@ -78,9 +78,4 @@ get_header(); ?>
 </main>
 
 <?php get_footer(); ?>
-<!-- <script>
-var $myGroup = $('.profile');
-$myGroup.on('show.bs.collapse','.collapse', function() {
-$myGroup.find('.collapse.show').collapse('hide');
-});
-</script> -->
+
