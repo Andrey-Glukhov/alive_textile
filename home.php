@@ -34,16 +34,6 @@
 			</div>
 		</div>
 	</div>
-	<!-- <div class="evet_category">
-		<div class="category_column" >
-			<div class="r_d_icon" data-category="r_d" data-press="no"></div>
-			<div class="museum_icon" data-category="virtual_museum" data-press="no"></div>
-			<div class="exhibition_icon" data-category="exhibition" data-press="no"></div>
-			<div class="prototype_icon" data-category="prototype" data-press="no"></div>
-			<div class="public_icon" data-category="public_event"data-press="no"></div>
-		</div>
-	</div> -->
-
   <section class="alive_opener" id="opener_canvas">
 		<article>
 			<header class="website_title">
@@ -102,31 +92,31 @@
 						<div class="col-6 column_event_background"></div>
 						<div class="col-6 column_ongoing_background"></div>
 					</div>
-					<div class="row collapse">
+					<div class="row collapse justify-content-center">
 						<?php
 						$event_type = get_field('event_type');
 						//echo $event_type[0];
 						if ($event_type[0] === "event"):
 							?>
-							<div class="col-6 column_event"></div>
-							<div class="col-6 column_ongoing">
+							<div class="col-6 d-none d-sm-none d-md-block column_event"></div>
+							<div class="col-md-6 col-sm-12 col-12 column_ongoing full">
 								<a href="<?php the_permalink();?>">
-									<div class="divider_ongong"></div>
+									<div class="divider_ongong"><p><?php echo $cat[0]->name;?></p></div>
 									<div class="ongoing_date"><p><?php the_field('event_date_text');?></p></div>
-									<h2><?php the_title();?></h2>
+									<div class="column_ongoing_header"><h2><?php the_title();?></h2></div>
 									<div class="ongoing_img"><img src="<?php the_field('timeline_image');?>"/></div>
 								</a>
 							</div>
 						<?php elseif ($event_type[0] === "ongoing"):?>
-							<div class="col-6 column_event">
+							<div class="col-md-6 col-sm-12 col-12 column_event full">
 								<a href="<?php the_permalink();?>">
-									<div class="divider_event"></div>
+									<div class="divider_event"><p><?php echo $cat[0]->name;?></p></div>
 									<div class="event_date"><p><?php the_field('event_date_text');?></p></div>
-									<h2><?php the_title();?></h2>
+									<div class="column_event_header"><h2><?php the_title();?></h2></div>
 									<div class="event_img"><img src="<?php the_field('timeline_image');?>"/></div>
 								</a>
 							</div>
-							<div class="col-6 column_ongoing"></div>
+							<div class="col-6 d-none d-sm-none d-md-block column_ongoing"></div>
 						<?php endif; ?>
 					</div>
 				</div>
