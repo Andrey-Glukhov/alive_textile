@@ -24,7 +24,7 @@ function alive_script_enqueue(){
   // Barba
   wp_enqueue_script( 'barba-js', 'https://cdn.jsdelivr.net/npm/@barba/core', array(), null, true );
   // P5
-  wp_enqueue_script( 'p5-js', 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js', array(), null, true );
+ // wp_enqueue_script( 'p5-js', 'https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.1.9/p5.min.js', array(), null, true );
   
   //if (is_home()) {
     //wp_enqueue_script( 'play-canvas', get_template_directory_uri() . '/js/play-canvas.js', array('p5-js'), null, true );

@@ -147,14 +147,7 @@ function initScipt() {
                 tooltipElem = null;
             }
         };
-        $(window).resize(function() {
-            var canvas = document.getElementById('patternlayer');
-            if (!canvas) {
-                return;
-            }
-            canvas.parentNode.removeChild(canvas);
-            setupPattern();
-        });
+
 
         $('.category_column').children('.icon_wraper').children('.filter').click(function() {
             if ($(this).data('press') === 'yes') {
@@ -207,16 +200,13 @@ function initScipt() {
             var currentOffset = destination[0].offsetTop;
             var first = true;
             $(this).parents('.portret_row').children('.portret').each(function() {
-                console.log(this.offsetTop);
                 if (first && this.offsetTop > currentOffset) {
                     destination = $(this);
                     first = false;
                 } else {
 
                 }
-
             });
-            console.log(destination);
             var source = $(idProfile);
             var container = $(this).parents('.portret_row');
             if (first) {
@@ -226,11 +216,37 @@ function initScipt() {
             }
 
             var select = $(this).attr('href');
-            // $('.profile').collapse('hide');
             $(select).collapse('show');
         });
+
     }
+    $(window).on('resize', function() {
+        var canvas = document.getElementById('patternlayer');
+        if (canvas) {
+            canvas.parentNode.removeChild(canvas);
+            setupPattern();
+        }
+        setLogos();
+    });
 }
+
+function setLogos() {
+    $('.logo_image img').each(function() {
+        var destHeight = $(this).parents('.organization_row').find('.portret a img').first().height();
+        var destOffset = destHeight / 2 - $(this).height() / 2;
+        console.log($(this).height());
+        $(this).css('position', 'absolute');
+        $(this).css('top', destOffset + 'px');
+        $(this).css('left', 5 + '%');
+        var destCircle = $(this).parent().siblings('.team_dot').first();
+
+        console.log(destCircle);
+        destOffset = destHeight / 2;
+        destCircle.css('top', destOffset + 'px');
+    });
+}
+
+$(window).on('load', setLogos);
 
 $(document).ready(function() {
     $('.menu-btn').on('click', function() {
@@ -256,8 +272,8 @@ function setupPattern() {
     if (!canvasWrapper) {
         return;
     }
-    var clientHeight = canvasWrapper.clientHeight;
-    var clientWidth = canvasWrapper.clientWidth;
+    var clientHeight = canvasWrapper.offsetHeight; //clientHeight;
+    var clientWidth = canvasWrapper.offsetWidth; //clientWidth;
     var canvasElement = document.createElement('canvas');
     canvasElement.id = "patternlayer";
     canvasElement.width = clientWidth;
