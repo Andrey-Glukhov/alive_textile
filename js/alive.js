@@ -196,8 +196,37 @@ function initScipt() {
     }
     if ($('.people-background').length) {
         $('.portret a').click(function() {
-            var select = $(this).attr('href');
             $('.profile').collapse('hide');
+            $('.profile').each(function() {
+                if ($(this).parents('.portret_row').length) {
+                    $(this).parents('.container-fluid').append($(this));
+                }
+            });
+            var idProfile = $(this).attr('href');
+            var destination = $(this).parent();
+            var currentOffset = destination[0].offsetTop;
+            var first = true;
+            $(this).parents('.portret_row').children('.portret').each(function() {
+                console.log(this.offsetTop);
+                if (first && this.offsetTop > currentOffset) {
+                    destination = $(this);
+                    first = false;
+                } else {
+
+                }
+
+            });
+            console.log(destination);
+            var source = $(idProfile);
+            var container = $(this).parents('.portret_row');
+            if (first) {
+                container.append(source);
+            } else {
+                destination.before(source);
+            }
+
+            var select = $(this).attr('href');
+            // $('.profile').collapse('hide');
             $(select).collapse('show');
         });
     }
