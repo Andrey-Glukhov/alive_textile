@@ -57,6 +57,7 @@ barba.init({
             }, 1600);
             initScipt();
             setupPattern();
+            setLogos();
         }
     }]
 });
