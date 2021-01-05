@@ -6,15 +6,17 @@ get_header(); ?>
 
 <div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="single">
+
 	<a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
 	<div class="return_arrow"></div>
+	<div class="single_opener" id="opener_canvas"></div>
 	<?php if(have_posts() ) : while (have_posts() ) :the_post();
 	$cat = get_the_category();
 	if (count($cat) <=0 ) {
 		$cat = array('no_cat');
 	}
 	?>
-	<div class="single_opener" id="opener_canvas"></div>
+
 	<div class="container-fluid single_item <?php the_field('event_type');?>_color">
 		<div class="row justify-content-center single_item_header">
 			<div class="col-1"></div>

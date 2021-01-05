@@ -48,7 +48,10 @@ get_header(); ?>
 }
 ?>
 <div class="row organization_row">
-  <div class="col-md-3 col-sm-5 col-5 <?php the_sub_field('organization'); ?>">
+  <div class="col-md-3 col-sm-5 col-5 ">
+    <div class="logo_image <?php the_sub_field('organization'); ?>">
+    <img src="<?php the_sub_field('logo'); ?>" alt="">
+      </div>
     <div class="team_dot"></div>
   </div>
 

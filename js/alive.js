@@ -8,6 +8,8 @@ var speed = 250;
 var stepSize = 1;
 var diameter = 1;
 
+var preventMouseOver = false;
+
 
 function pageTransition() {
     var tl = gsap.timeline();
@@ -31,12 +33,14 @@ barba.init({
         name: 'page_transition',
         sync: true,
         leave(data) {
+            clearInterval(drawTimer);
             const done = this.async();
             pageTransition();
             setTimeout(function() {
                 done();
             }, 1600);
-            clearInterval(drawTimer);
+
+            //done();
         },
         enter(data) {
             window.scrollTo(0, 0);
@@ -88,34 +92,38 @@ function initScipt() {
         // collapse elements
         $('.r_d').each(function() {
             $(this).mouseover(function(evt) {
-                if ($(this).data('open') == 'open') {
+                var circle = evt.target;
+                if ($(circle).attr('data-open') == 'open') {
                     return
                 }
-                var catName = 'overlay_icon_' + $(this).parent().parent().data('category');
-                if (!$(this).hasClass(catName)) {
-                    gsap.to($(this).addClass(catName), 0.3, { scale: 3 });
+                var catName = 'overlay_icon_' + $(circle).parent().parent().attr('data-category');
+                if (!$(circle).hasClass(catName)) {
+                    gsap.to($(circle).addClass(catName), 0.3, { scale: 3 });
                 };
             });
             $(this).mouseout(function(evt) {
-                if ($(this).data('open') == 'open') {
+                var circle = evt.target;
+                if ($(circle).attr('data-open') == 'open') {
                     return
                 }
-                var catName = 'overlay_icon_' + $(this).parent().parent().data('category');
-                gsap.to($(this).removeClass(catName), 0.3, { scale: 1 });
+                var catName = 'overlay_icon_' + $(circle).parent().parent().attr('data-category');
+                gsap.to($(circle).removeClass(catName), 0.3, { scale: 1 });
             });
             $(this).click(function(evt) {
                 var circle = evt.target;
-                var catName = 'overlay_icon_' + $(this).parent().parent().data('category');
-                if ($(this).hasClass(catName)) {
-                    $(this).css('background-position', 'bottom');
+                var catName = 'overlay_icon_' + $(circle).parent().parent().attr('data-category');
+                if ($(circle).hasClass(catName)) {
+                    $(circle).css('background-position', 'bottom');
                 }
-                if ($(this).parent().siblings('.collapse').hasClass('show')) {
-                    $(this).data('open', 'close');
-                    $(this).parent().siblings('.collapse').collapse('hide');
-                    $(this).css('background-position', 'top');
+                if ($(circle).parent().siblings('.collapse').hasClass('show')) {
+                    $(circle).attr('data-open', 'close');
+                    $(circle).parent().siblings('.collapse').collapse('hide');
+                    $(circle).css('background-position', 'top');
+                    gsap.to($(circle).removeClass(catName), 0.3, { scale: 1 });
                 } else {
-                    $(this).data('open', 'open');
-                    $(this).parent().siblings('.collapse').collapse('show');
+                    gsap.to($(circle).addClass(catName), 0.3, { scale: 3 });
+                    $(circle).attr('data-open', 'open');
+                    $(circle).parent().siblings('.collapse').collapse('show');
                 }
             });
         });
@@ -123,9 +131,16 @@ function initScipt() {
         // Timelene tooltip
         var tooltipElem;
         document.onmouseover = function(event) {
+            if (preventMouseOver) {
+                preventMouseOver = false;
+                return;
+            }
             var target = event.target;
             var tooltipHtml = target.dataset.tooltip;
             if (!tooltipHtml) return;
+            if ($(target).attr('data-open') == 'open') {
+                return;
+            }
             tooltipElem = document.createElement('div');
             tooltipElem.className = 'tooltip_r_d';
             tooltipElem.innerHTML = tooltipHtml;
@@ -147,34 +162,27 @@ function initScipt() {
                 tooltipElem = null;
             }
         };
-        $(window).resize(function() {
-            var canvas = document.getElementById('patternlayer');
-            if (!canvas) {
-                return;
-            }
-            canvas.parentNode.removeChild(canvas);
-            setupPattern();
-        });
+
 
         $('.category_column').children('.icon_wraper').children('.filter').click(function() {
-            if ($(this).data('press') === 'yes') {
-                $(this).data('press', 'no');
+            if ($(this).attr('data-press') === 'yes') {
+                $(this).attr('data-press', 'no');
                 $(this).css('background-position', 'top');
             } else {
-                $(this).data('press', 'yes');
+                $(this).attr('data-press', 'yes');
                 $(this).css('background-position', 'bottom');
             }
             var catArray = [];
             $('.category_column').children('.icon_wraper').children('.filter').each(function() {
-                if ($(this).data('press') === 'yes') {
-                    catArray.push($(this).data('category'));
+                if ($(this).attr('data-press') === 'yes') {
+                    catArray.push($(this).attr('data-category'));
                 }
             });
             $('.timeline_item').each(function() {
                 if (catArray.length <= 0) {
                     $(this).removeClass('item_hide');
                 } else {
-                    if (catArray.indexOf($(this).data('category')) >= 0) {
+                    if (catArray.indexOf($(this).attr('data-category')) >= 0) {
                         $(this).removeClass('item_hide');
                     } else {
                         $(this).addClass('item_hide');
@@ -207,16 +215,13 @@ function initScipt() {
             var currentOffset = destination[0].offsetTop;
             var first = true;
             $(this).parents('.portret_row').children('.portret').each(function() {
-                console.log(this.offsetTop);
                 if (first && this.offsetTop > currentOffset) {
                     destination = $(this);
                     first = false;
                 } else {
 
                 }
-
             });
-            console.log(destination);
             var source = $(idProfile);
             var container = $(this).parents('.portret_row');
             if (first) {
@@ -226,11 +231,38 @@ function initScipt() {
             }
 
             var select = $(this).attr('href');
-            // $('.profile').collapse('hide');
             $(select).collapse('show');
         });
+
     }
+    $(window).on('resize', function() {
+        var canvas = document.getElementById('patternlayer');
+        if (canvas) {
+            canvas.parentNode.removeChild(canvas);
+            setupPattern();
+        }
+        setLogos();
+    });
+    $("*").on("touchend", function(e) { preventMouseOver = true; });
 }
+
+function setLogos() {
+    $('.logo_image img').each(function() {
+        var destHeight = $(this).parents('.organization_row').find('.portret a img').first().height();
+        var destOffset = destHeight / 2 - $(this).height() / 2;
+        console.log($(this).height());
+        $(this).css('position', 'absolute');
+        $(this).css('top', destOffset + 'px');
+        $(this).css('left', 5 + '%');
+        var destCircle = $(this).parent().siblings('.team_dot').first();
+
+        console.log(destCircle);
+        destOffset = destHeight / 2;
+        destCircle.css('top', destOffset + 'px');
+    });
+}
+
+$(window).on('load', setLogos);
 
 $(document).ready(function() {
     $('.menu-btn').on('click', function() {
@@ -256,8 +288,8 @@ function setupPattern() {
     if (!canvasWrapper) {
         return;
     }
-    var clientHeight = canvasWrapper.clientHeight;
-    var clientWidth = canvasWrapper.clientWidth;
+    var clientHeight = canvasWrapper.offsetHeight; //clientHeight;
+    var clientWidth = canvasWrapper.offsetWidth; //clientWidth;
     var canvasElement = document.createElement('canvas');
     canvasElement.id = "patternlayer";
     canvasElement.width = clientWidth;
