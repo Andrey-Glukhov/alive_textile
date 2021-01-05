@@ -16,7 +16,7 @@ global
 input, textarea, select, a, button { outline: none; }
 input, textarea, select, a, button:focus { outline:none; }
 input, textarea, select, a, button:active { outline: none; }
-ul, li {list-style-type: none;}
+ul.menu_wraper>#menu-menu-1>li {list-style-type: none;}
 
 .tooltip_r_d {
   position: fixed;
@@ -600,6 +600,7 @@ single_project
   min-height: 100vh;
   height: 100%;
 }
+
 .single_item_header{
   padding-top: 15px;
 }
@@ -666,21 +667,21 @@ single_project
   z-index: 120;
 }
 .single_event_type{
-  border-bottom: solid #ffffff 2px;
-  height: fit-content;
+  border-bottom: solid #ffffff 1.2px;
+padding-left: 0;
 }
 .single_event_type>h2{
   text-align: left;
   font-family: 'Bitter', serif;
   font-weight: 400;
   font-size: 2rem;
-  color: rgb(196, 255, 0);
+  color: #ffffff;
   text-transform: uppercase;
   margin-bottom: 0;
 }
 .single_ongoing_type{
+  padding-left: 0;
   border-bottom: solid #ffffff 1.2px;
-  height: fit-content;
 }
 .single_ongoing_type>h2{
   text-align: left;
@@ -790,6 +791,59 @@ single_project
   width: 27px;
   height: auto;
   margin-right: 5px;
+}
+.single_type_icon{
+  height: 41px;
+  width: 41px;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 100;
+}
+.single_type_icon.visions{
+  background-image: url(../img/icons_size-14.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.single_type_icon.research{
+  background-image: url(../img/icons_size-13.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.single_type_icon.demonstrators{
+  background-image: url(../img/icons_size-11.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.single_type_icon.exhibitions{
+  background-image: url(../img/icons_size-15.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+
+.single_type_icon.dialogues{
+  background-image: url(../img/icons_size-12.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.single_type_icon.updates{
+  background-image: url(../img/icons_size-16.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: top;
+}
+.single_line{
+  border-bottom: solid #ffffff 1.2px;
+}
+.type_icon_wrapper{
+  display: flex;
+  justify-content: center;
+  padding-top: 5px;
 }
 /*--------------------------------------------------------------
 about
@@ -971,7 +1025,7 @@ team
   background-position: center;
 }
 .vrije_universiteit_amsterdam{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/vu-01.png);
+  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/VUlogo_NL_Blauw_HR_RGB_tcm289-201375-copy.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1230,16 +1284,22 @@ publications
     width: 100%;
   }
   .column_event_header{
-  width: 100%;
+    width: 100%;
   }
   .column_ongoing_header{
-      width: 100%;
+    width: 100%;
   }
   .divider_event>p, .event_date>p, .column_event_header>h2{
     margin-right: 0;
   }
   .divider_ongong>p, .ongoing_date>p, .column_ongoing_header>h2{
     margin-left: 0;
+  }
+  .single_item_header{
+    padding-top: 70px;
+  }
+  .fluid_content{
+    padding: 30px 0;
   }
 }
 /*sm*/
@@ -1364,6 +1424,12 @@ publications
   }
   .divider_ongong>p, .ongoing_date>p, .column_ongoing_header>h2{
     margin-left: 0;
+  }
+  .single_item_header{
+    padding-top: 70px;
+  }
+  .fluid_content{
+    padding: 40px 0;
   }
 }
 /*md*/
