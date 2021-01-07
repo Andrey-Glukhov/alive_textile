@@ -9,7 +9,8 @@ var stepSize = 1;
 var diameter = 1;
 
 var preventMouseOver = false;
-
+var pastWidth;
+var resizeTimer;
 
 function pageTransition() {
     var tl = gsap.timeline();
@@ -57,6 +58,11 @@ barba.init({
             }, 1600);
             initScipt();
             setupPattern();
+            setLogos();
+            var scrollElement = document.querySelector('.timeline');
+            if (scrollElement) {
+                scrollElement.scrollIntoView();
+            }
         }
     }]
 });
@@ -236,12 +242,19 @@ function initScipt() {
 
     }
     $(window).on('resize', function() {
-        var canvas = document.getElementById('patternlayer');
-        if (canvas) {
-            canvas.parentNode.removeChild(canvas);
-            setupPattern();
-        }
-        setLogos();
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(function() {
+            if ($(window).width() != pastWidth) {
+                var canvas = document.getElementById('patternlayer');
+                if (canvas) {
+                    canvas.parentNode.removeChild(canvas);
+                    setupPattern();
+                }
+                setLogos();
+                pastWidth = $(window).width();
+            }
+        }, 100);
+
     });
     $("*").on("touchend", function(e) { preventMouseOver = true; });
 }
@@ -250,13 +263,10 @@ function setLogos() {
     $('.logo_image img').each(function() {
         var destHeight = $(this).parents('.organization_row').find('.portret a img').first().height();
         var destOffset = destHeight / 2 - $(this).height() / 2;
-        console.log($(this).height());
         $(this).css('position', 'absolute');
         $(this).css('top', destOffset + 'px');
         $(this).css('left', 5 + '%');
         var destCircle = $(this).parent().siblings('.team_dot').first();
-
-        console.log(destCircle);
         destOffset = destHeight / 2;
         destCircle.css('top', destOffset + 'px');
     });
@@ -276,6 +286,7 @@ $(document).ready(function() {
     });
     initScipt();
     setupPattern();
+    pastWidth = $(window).width();
 });
 
 function setupPattern() {
@@ -317,7 +328,7 @@ function setupPattern() {
         ctx.drawImage(img1, 0, 0);
         drawTimer = setInterval(drawPattern, 150);
     };
-    img1.src = 'http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/11/start.png';
+    img1.src = 'http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/start.png';
 }
 
 function drawPattern() {
@@ -339,14 +350,14 @@ function drawPattern() {
     if (single) {
         if (ongoingTags.length) {
             ctx.fillStyle = 'rgb(213, 197, 179)';
-            ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
+            ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
         } else {
-            ctx.fillStyle = 'rgba(190, 255, 60, 0.27)';
-            ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
+            ctx.fillStyle = 'rgba(196, 255, 0, 0.27)';
+            ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
         }
     } else {
-        ctx.fillStyle = 'rgba(190, 255, 60, 0.27)';
-        ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
+        ctx.fillStyle = 'rgba(196, 255, 0, 0.27)';
+        ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
     }
     for (var i = 0; i <= speed; i++) {
         for (var ind = 0; ind < 3; ind++) {
@@ -354,10 +365,10 @@ function drawPattern() {
             if (!single) {
                 if (pointColor[ind].posX + stepSize / 2 < clientWidth / 2 && pointColor[ind].posY + stepSize / 2 > clientHeight / 2) {
                     ctx.fillStyle = 'rgb(213, 197, 179)';
-                    ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
+                    ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
                 } else {
-                    ctx.fillStyle = 'rgba(190, 255, 60, 0.27)';
-                    ctx.shadowColor = 'rgba(190, 255, 60, 0.27)';
+                    ctx.fillStyle = 'rgba(196, 255, 0, 0.27)';
+                    ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
                 }
             }
             ctx.shadowBlur = 1;
@@ -389,7 +400,6 @@ function getPosition(pointArg, stepSize, pWidth, pHeight) {
         [-1, -1]
     ];
     var direction = Math.floor(Math.random() * 8);
-
     pointResult.posX += directionsArray[direction][0] * stepSize;
     pointResult.posY += directionsArray[direction][1] * stepSize;
     if (pointResult.posX > pWidth) pointResult.posX = 0;
