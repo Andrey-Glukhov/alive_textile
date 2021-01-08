@@ -6,13 +6,14 @@ get_header(); ?>
 
 <div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="subscribe">
-
+  <div class="static_opener_background" ></div>
+  <div class="static_opener" id="opener_canvas"></div> 
   <a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
   <div class="return_arrow"></div>
   <div class="container-fluid people-background">
     <div class="row background-subscribe-row">
       <div class="col-lg-3 col-md-4 col-sm-12 icons_side"></div>
-      <div class="col-lg-9 col-md-8 col-sm-12 form_side"></div>
+      <div class="col-lg-9 col-md-8 col-sm-12 form_side canvas_template"></div>
     </div>
   </div>
 

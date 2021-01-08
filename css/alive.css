@@ -1113,6 +1113,20 @@ about
     margin: 20px 15px;
 }
 
+.static_opener_background {
+    position: fixed;
+    height: 100vh;
+    width: 100%;
+    z-index: -5;
+    background-color: rgb(196, 255, 0);
+}
+
+.static_opener {
+    position: fixed;
+    height: 100vh;
+    z-index: -1;
+}
+
 
 /*--------------------------------------------------------------
 contact
@@ -1182,7 +1196,7 @@ team
 }
 
 .people_side {
-    background-color: rgb(196, 255, 0);
+    /* background-color: rgb(196, 255, 0); */
 }
 
 .portret>a>img {
@@ -1373,7 +1387,7 @@ div.mc-field-group {
 }
 
 .background-subscribe-row>.form_side {
-    background-color: rgb(196, 255, 0);
+    /* background-color: rgb(196, 255, 0); */
 }
 
 .newsletter>p {

@@ -7,6 +7,9 @@ var countPoint = 10000;
 var speed = 250;
 var stepSize = 1;
 var diameter = 1;
+var canvasType;
+var colorLight = 'rgba(196, 255, 0, 0.27)';
+var colorDark = 'rgb(213, 197, 179)';
 
 var preventMouseOver = false;
 var pastWidth;
@@ -289,23 +292,44 @@ $(document).ready(function() {
     pastWidth = $(window).width();
 });
 
-function setupPattern() {
-    var single = false;
+function getCanvasWrapper() {
     var canvasWrapper = document.querySelector('.alive_opener');
-    if (!canvasWrapper) {
-        canvasWrapper = document.querySelector('.single_opener');
-        var single = true;
+    if (canvasWrapper) {
+        canvasType = 'alive';
+        return canvasWrapper;
     }
-    if (!canvasWrapper) {
+    canvasWrapper = document.querySelector('.single_opener');
+    var ongoingTags = document.querySelector('.single_ongoing_type');
+    if (canvasWrapper && ongoingTags) {
+        canvasType = 'ongoing';
+        return canvasWrapper;
+    } else if (canvasWrapper) {
+        canvasType = 'single';
+        return canvasWrapper;
+    }
+    canvasWrapper = document.querySelector('.static_opener');
+    if (canvasWrapper) {
+        canvasWrapper.style.width = document.querySelector('.canvas_template').clientWidth + 'px';
+        canvasWrapper.style.left = document.querySelector('.canvas_template').offsetLeft + 'px';
+        canvasType = 'static';
+        return canvasWrapper;
+    }
+    return null;
+}
+
+function setupPattern() {
+
+    var canvasWrap = getCanvasWrapper();
+    if (!canvasWrap) {
         return;
     }
-    var clientHeight = canvasWrapper.offsetHeight; //clientHeight;
-    var clientWidth = canvasWrapper.offsetWidth; //clientWidth;
+    var clientHeight = canvasWrap.offsetHeight; //clientHeight;
+    var clientWidth = canvasWrap.offsetWidth; //clientWidth;
     var canvasElement = document.createElement('canvas');
     canvasElement.id = "patternlayer";
     canvasElement.width = clientWidth;
     canvasElement.height = clientHeight;
-    canvasWrapper.appendChild(canvasElement);
+    canvasWrap.appendChild(canvasElement);
     var ctx = canvasElement.getContext('2d');
     pointColor = [];
     pointBlank = [];
@@ -319,7 +343,7 @@ function setupPattern() {
             posY: randomInt(0, clientHeight)
         });
     }
-    if (single) {
+    if (canvasType !== 'alive') {
         drawTimer = setInterval(drawPattern, 150);
         return;
     }
@@ -332,43 +356,31 @@ function setupPattern() {
 }
 
 function drawPattern() {
-    var canvasWrapper = document.querySelector('.alive_opener');
-    var canvasElement = document.querySelector('.alive_opener canvas');
-    var ongoingTags = document.querySelectorAll('.single_ongoing_type');
-    var single = false;
-    if (!canvasWrapper) {
-        canvasWrapper = document.querySelector('.single_opener');
-        canvasElement = document.querySelector('.single_opener canvas');
-        single = true;
-    }
-    if (!canvasWrapper) {
+    var canvasWrap = getCanvasWrapper();
+    if (!canvasWrap) {
         return;
     }
-    var clientHeight = canvasWrapper.clientHeight;
-    var clientWidth = canvasWrapper.clientWidth;
+    var clientHeight = canvasWrap.clientHeight;
+    var clientWidth = canvasWrap.clientWidth;
+    var canvasElement = document.querySelector('#patternlayer')
     var ctx = canvasElement.getContext('2d');
-    if (single) {
-        if (ongoingTags.length) {
-            ctx.fillStyle = 'rgb(213, 197, 179)';
-            ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
-        } else {
-            ctx.fillStyle = 'rgba(196, 255, 0, 0.27)';
-            ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
-        }
-    } else {
-        ctx.fillStyle = 'rgba(196, 255, 0, 0.27)';
-        ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
+    if (canvasType === 'ongoing' || canvasType === 'static') {
+        ctx.fillStyle = colorDark;
+        ctx.shadowColor = colorLight;
+    } else if (canvasType === 'single') {
+        ctx.fillStyle = colorLight;
+        ctx.shadowColor = colorLight;
     }
     for (var i = 0; i <= speed; i++) {
         for (var ind = 0; ind < 3; ind++) {
             pointColor[ind] = getPosition(pointColor[ind], stepSize, clientWidth, clientHeight);
-            if (!single) {
+            if (canvasType === 'alive') {
                 if (pointColor[ind].posX + stepSize / 2 < clientWidth / 2 && pointColor[ind].posY + stepSize / 2 > clientHeight / 2) {
-                    ctx.fillStyle = 'rgb(213, 197, 179)';
-                    ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
+                    ctx.fillStyle = colorDark;
+                    ctx.shadowColor = colorLight;
                 } else {
-                    ctx.fillStyle = 'rgba(196, 255, 0, 0.27)';
-                    ctx.shadowColor = 'rgba(196, 255, 0, 0.27)';
+                    ctx.fillStyle = colorLight;
+                    ctx.shadowColor = colorLight;
                 }
             }
             ctx.shadowBlur = 1;
