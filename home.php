@@ -40,7 +40,7 @@
 				<h1>ALIVE<br>TEXTILES</h2>
 				</header>
 			</article>
-			<div class="arrow_to_scroll"></div>
+			<div class="arrow_to_scroll"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/down_arrow-18.png"></div>
 		</section>
 
 		<section class="container-fluid timeline">
