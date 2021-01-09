@@ -1303,7 +1303,7 @@ team
     padding-right: 0;
 }
 
-.team_header_left {
+.subscribe_header_left {
     background-color: #d2c2b0;
 }
 
@@ -1428,6 +1428,21 @@ div.mc-field-group {
     display: none;
 }
 
+.subscribe_header {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.subscribe_header>h1 {
+    padding-left: 15px;
+    font-family: 'Bitter', serif;
+    font-size: 3rem;
+    font-weight: 400;
+    color: #ffffff;
+    margin: 13px 0 25px 0;
+    border-bottom: 1.5px solid #ffffff;
+}
+
 
 /*--------------------------------------------------------------
 publications
@@ -1450,7 +1465,7 @@ publications
     .newsletter {
         height: inherit;
     }
-    .team_header {
+    .subscribe_header {
         background-color: #d2c2b0;
     }
     .filter {
@@ -1481,6 +1496,14 @@ publications
         padding-left: 0;
     }
     .team_header {
+        padding-left: 15px;
+    }
+    .subscribe_header>h1 {
+        font-size: 2.4rem;
+        margin-right: 0;
+        padding-left: 0;
+    }
+    .subscribe_header {
         padding-left: 15px;
     }
     .inner_left {
@@ -1597,7 +1620,7 @@ publications
     .newsletter {
         height: inherit;
     }
-    .team_header {
+    .subscribe_header {
         background-color: #d2c2b0;
     }
     .filter {
@@ -1627,6 +1650,14 @@ publications
         padding-left: 0;
     }
     .team_header {
+        padding-left: 15px;
+    }
+    .subscribe_header>h1 {
+        font-size: 3rem;
+        margin-right: 50px;
+        padding-left: 0;
+    }
+    .subscribe_header {
         padding-left: 15px;
     }
     .wp-bootstrap-blocks-row>div>h2 {

@@ -20,8 +20,8 @@ get_header(); ?>
   <div class="container-fluid subscribe_page">
 
     <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-1 col-1 team_header_left"></div>
-      <div class="col-lg-8 col-md-7 col-sm-11 col-11 team_header">
+      <div class="col-lg-3 col-md-4 col-sm-1 col-1 subscribe_header_left"></div>
+      <div class="col-lg-8 col-md-7 col-sm-11 col-11 subscribe_header">
         <h1>SUBSCRIBE</h1>
       </div>
     </div>
