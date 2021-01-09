@@ -7,7 +7,7 @@ get_header(); ?>
 <div class="page_transition"></div>
 <main data-barba="container" data-barba-namespace="single">
 
-	<a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
+	<a href="https://www.alivetextiles.com/" class="home_link"></a>
 	<div class="return_arrow"></div>
 	<div class="single_opener" id="opener_canvas"></div>
 	<?php if(have_posts() ) : while (have_posts() ) :the_post();

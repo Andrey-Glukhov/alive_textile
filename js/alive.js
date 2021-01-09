@@ -64,7 +64,9 @@ barba.init({
             setLogos();
             var scrollElement = document.querySelector('.timeline');
             if (scrollElement) {
-                scrollElement.scrollIntoView();
+                scrollElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
             }
         }
     }]
@@ -199,6 +201,14 @@ function initScipt() {
                 }
             });
         });
+        var timelineElement = document.querySelector('.timeline');
+        if (timelineElement) {
+            $('.arrow_to_scroll').on('click', function() {
+                timelineElement.scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        }
     }
     if ($('.for_animation').length) {
         controller = new ScrollMagic.Controller();
