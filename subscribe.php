@@ -10,17 +10,17 @@ get_header(); ?>
   <div class="static_opener" id="opener_canvas"></div> 
   <a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
   <div class="return_arrow"></div>
-  <div class="container-fluid people-background">
+  <!-- <div class="container-fluid people-background">
     <div class="row background-subscribe-row">
       <div class="col-lg-3 col-md-4 col-sm-12 icons_side"></div>
       <div class="col-lg-9 col-md-8 col-sm-12 form_side canvas_template"></div>
     </div>
-  </div>
+  </div> -->
 
   <div class="container-fluid subscribe_page">
 
     <div class="row">
-      <div class="col-lg-3 col-md-4 col-sm-1 col-1"></div>
+      <div class="col-lg-3 col-md-4 col-sm-1 col-1 team_header_left"></div>
       <div class="col-lg-8 col-md-7 col-sm-11 col-11 team_header">
         <h1>SUBSCRIBE</h1>
       </div>
@@ -28,6 +28,7 @@ get_header(); ?>
 
     <div class="row justify-content-center subscribe_row">
       <div class="col-lg-3 col-md-4 col-sm-10 col-10 newsletter">
+        <div class="newsletter_background"></div>
         <p>
           If you wish to receive updates about ALIVE TEXTILES, please subscribe to
           our newsletter.
@@ -37,7 +38,7 @@ get_header(); ?>
           <a href="https://www.instagram.com/studiosamiraboon/" target="_blank"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/instagram-square.png"/></a>
         </div>
       </div>
-      <div class="subscribe_form_bg col-lg-9 col-md-8 col-sm-12">
+      <div class="subscribe_form_bg col-lg-9 col-md-8 col-sm-12 canvas_template">
         <div class="row justify-content-center sub_wraper">
           <div class="col-lg-7 col-md-8 col-sm-10 col-10">
             <!-- Begin Mailchimp Signup Form -->

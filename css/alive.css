@@ -1303,6 +1303,10 @@ team
     padding-right: 0;
 }
 
+.team_header_left {
+    background-color: #d2c2b0;
+}
+
 .team_header>h1 {
     padding-left: 15px;
     font-family: 'Bitter', serif;
@@ -1401,6 +1405,11 @@ div.mc-field-group {
     /* background-color: rgb(196, 255, 0); */
 }
 
+.newsletter {
+    background-color: #d2c2b0;
+    height: 100vh;
+}
+
 .newsletter>p {
     padding-top: 15px;
     font-family: 'Bitter', serif;
@@ -1415,6 +1424,10 @@ div.mc-field-group {
     width: 100%;
 }
 
+.newsletter_background {
+    display: none;
+}
+
 
 /*--------------------------------------------------------------
 publications
@@ -1424,6 +1437,22 @@ publications
 /*xs*/
 
 @media only screen and (max-width: 576px) {
+    .newsletter_background {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #d2c2b0;
+        z-index: -1;
+    }
+    .newsletter {
+        height: inherit;
+    }
+    .team_header {
+        background-color: #d2c2b0;
+    }
     .filter {
         display: none;
     }
@@ -1476,11 +1505,11 @@ publications
     .descr>p {
         padding-right: 0;
     }
-    .subscribe_page {
+    /* .subscribe_page {
         margin-top: 50px;
-    }
+    } */
     .subscribe_form_bg {
-        background-color: rgb(196, 255, 0);
+        /* background-color: rgb(196, 255, 0); */
         padding-top: 15px;
         padding-bottom: 15px;
     }
@@ -1555,6 +1584,22 @@ publications
 /*sm*/
 
 @media screen and (min-width: 576px) and (max-width: 768px) {
+    .newsletter_background {
+        display: block;
+        position: absolute;
+        width: 100vw;
+        height: 100%;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #d2c2b0;
+        z-index: -1;
+    }
+    .newsletter {
+        height: inherit;
+    }
+    .team_header {
+        background-color: #d2c2b0;
+    }
     .filter {
         display: none;
     }
@@ -1600,7 +1645,7 @@ publications
         padding-left: 15px;
     }
     .subscribe_form_bg {
-        background-color: rgb(196, 255, 0);
+        /* background-color: rgb(196, 255, 0); */
         padding-top: 15px;
         padding-bottom: 15px;
     }
