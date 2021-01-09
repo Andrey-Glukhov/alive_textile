@@ -183,6 +183,7 @@ function initScipt() {
                 $(this).attr('data-press', 'yes');
                 $(this).css('background-position', 'bottom');
             }
+            //filter categories on timeline
             var catArray = [];
             $('.category_column').children('.icon_wraper').children('.filter').each(function() {
                 if ($(this).attr('data-press') === 'yes') {
@@ -200,6 +201,21 @@ function initScipt() {
                     }
                 }
             });
+        });
+        $('.category_column').children('.icon_wraper').children('.filter').on('mouseover', function() {
+            if (preventMouseOver) {
+                preventMouseOver = false;
+                return;
+            }
+            gsap.to($(this).siblings('.tiptext')[0], { opacity: 1 });
+
+        });
+        $('.category_column').children('.icon_wraper').children('.filter').on('mouseout', function() {
+            if (preventMouseOver) {
+                preventMouseOver = false;
+                return;
+            }
+            gsap.to($(this).siblings('.tiptext')[0], { opacity: 0 });
         });
         var timelineElement = document.querySelector('.timeline');
         if (timelineElement) {
