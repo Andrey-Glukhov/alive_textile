@@ -577,6 +577,35 @@ canvas {
     z-index: 100;
 }
 
+.column_event_notice>p{
+	font-family: 'Bitter', serif;
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #485e1e;
+	margin: 30px 15px 0 0;
+	text-align: left;
+}
+
+.column_ongoing_notice>p{
+	font-family: 'Bitter', serif;
+    font-style: normal;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #485e1e;
+	margin: 30px 0 0 15px;
+	text-align: left;
+}
+
+.column_event_notice{
+	width:80%;
+	margin-left: auto;
+}
+
+.column_ongoing_notice{
+	width:80%;
+	margin-right: auto;
+}
 
 /*--------------------------------------------------------------
 timeline
@@ -1226,25 +1255,25 @@ team
 
 
 /* .studio_samira_boon{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/samira-01-1.png);
+  background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/samira-01-1.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .vrije_universiteit_amsterdam{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/VUlogo_NL_Blauw_HR_RGB_tcm289-201375-copy.png);
+  background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/VUlogo_NL_Blauw_HR_RGB_tcm289-201375-copy.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .waag_amsterdam{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/waag-01.png);
+  background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/waag-01.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
 }
 .interns{
-  background-image: url(http://localhost:8888/alive_textile/wordpress/wp-content/uploads/2020/12/intern-02-01.png);
+  background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/intern-02-01.png);
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
@@ -1601,6 +1630,18 @@ publications
     .fluid_content {
         padding: 30px 0;
     }
+	.column_event_notice{
+	width:100%;
+	margin-left: auto;
+	}
+	.column_ongoing_notice{
+	width:100%;
+	margin-right: auto;
+	}
+	.column_ongoing_notice>p, 
+	.column_event_notice>p{
+		margin:30px 0 0 0;
+	}
 }
 
 
@@ -1765,6 +1806,18 @@ publications
     .fluid_content {
         padding: 40px 0;
     }
+	.column_event_notice{
+	width:90%;
+	margin-left: auto;
+	}
+	.column_ongoing_notice{
+	width:90%;
+	margin-right: auto;
+	}
+	.column_ongoing_notice>p, 
+	.column_event_notice>p{
+		margin:30px 0 0 0;
+	}
 }
 
 
@@ -1814,6 +1867,14 @@ publications
         width: 90%;
         padding-left: 15px;
     }
+	.column_event_notice{
+	width:90%;
+	margin-left: auto;
+}
+.column_ongoing_notice{
+	width:90%;
+	margin-right: auto;
+}
 }
 
 

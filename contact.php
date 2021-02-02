@@ -8,7 +8,7 @@ get_header(); ?>
 <main data-barba="container" data-barba-namespace="contact">
 <div class="static_opener_background" ></div>
 <div class="static_opener" id="opener_canvas"></div>
-  <a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
+  <a href="https://www.alivetextiles.com/" class="home_link"></a>
   <div class="return_arrow"></div>
   <div class="container-fluid">
     <div class="row">
@@ -23,7 +23,7 @@ get_header(); ?>
           <div class="row map_row justify-content-center">
             <div class="col-md-12 col-sm-7 col-10 map_col">
             <a href="https://goo.gl/maps/LUJPyYYhS2GCYCyt6" target="_blank">
-              <img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/snazzy-image-01.png"/>
+              <img src="https://www.alivetextiles.com/wp-content/themes/alive/img/snazzy-image-01.png"/>
             </a>
             </div>
           </div>
@@ -47,8 +47,8 @@ get_header(); ?>
             </p>
           </div>
           <div class="col-md-12 col-sm-10 col-10 subscribe_icons">
-            <a href="https://www.facebook.com/studiosamiraboon/" target="_blank"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/facebook-square.png"/></a>
-            <a href="https://www.instagram.com/studiosamiraboon/" target="_blank"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/instagram-square.png"/></a>
+            <a href="https://www.facebook.com/studiosamiraboon/" target="_blank"><img src="https://www.alivetextiles.com/wp-content/themes/alive/img/facebook-square.png"/></a>
+            <a href="https://www.instagram.com/studiosamiraboon/" target="_blank"><img src="https://www.alivetextiles.com/wp-content/themes/alive/img/instagram-square.png"/></a>
           </div>
         </div>
 

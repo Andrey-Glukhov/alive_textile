@@ -8,7 +8,7 @@ get_header(); ?>
 <main data-barba="container" data-barba-namespace="about">
 <div class="static_opener_background" ></div>
 <div class="static_opener" id="opener_canvas"></div> 
-<a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
+<a href="https://www.alivetextiles.com/" class="home_link"></a>
   <div class="return_arrow"></div>
   <div class="container-fluid">
     <div class="row">

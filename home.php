@@ -40,7 +40,7 @@
 				<h1>ALIVE<br>TEXTILES</h2>
 				</header>
 			</article>
-			<div class="arrow_to_scroll"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/down_arrow-18.png"></div>
+			<div class="arrow_to_scroll"><img src="https://www.alivetextiles.com/wp-content/themes/alive/img/down_arrow-18.png"></div>
 		</section>
 
 		<section class="container-fluid timeline">
@@ -88,11 +88,11 @@
 				<div class="col-12 timeline_item" data-category="<?php echo $catname; ?>">
 					<div class="row">
 						<!--<div class="overlay_icon anim_icon"></div>-->
-						<div class="r_d" data-tooltip="<?php the_title();?>" data-open="close"> </div>
+						<div class="r_d overlay_icon_<?php echo $cat[0]->name;?>" data-tooltip="<?php the_title();?>" data-open="open" style="background-position: center top; transform: scale(3, 3);"> </div>
 						<div class="col-6 column_event_background"></div>
 						<div class="col-6 column_ongoing_background"></div>
 					</div>
-					<div class="row collapse justify-content-center">
+					<div class="row collapse show justify-content-center" >
 						<?php
 						$event_type = get_field('event_type');
 						//echo $event_type[0];
@@ -104,6 +104,7 @@
 									<div class="divider_ongong"><p><?php echo $cat[0]->name;?></p></div>
 									<div class="ongoing_date"><p><?php the_field('event_date_text');?></p></div>
 									<div class="column_ongoing_header"><h2><?php the_title();?></h2></div>
+									<div class="column_ongoing_notice"><p><?php the_field('introduction');?></p></div>
 									<div class="ongoing_img"><img src="<?php the_field('timeline_image');?>"/></div>
 								</a>
 							</div>
@@ -113,6 +114,7 @@
 									<div class="divider_event"><p><?php echo $cat[0]->name;?></p></div>
 									<div class="event_date"><p><?php the_field('event_date_text');?></p></div>
 									<div class="column_event_header"><h2><?php the_title();?></h2></div>
+									<div class="column_event_notice"><p><?php the_field('introduction');?></p></div>
 									<div class="event_img"><img src="<?php the_field('timeline_image');?>"/></div>
 								</a>
 							</div>

@@ -11,7 +11,8 @@ var canvasType;
 var colorLight = 'rgba(196, 255, 0, 0.27)';
 var colorDark = 'rgb(213, 197, 179)';
 
-var preventMouseOver = false;
+var preventMouseOver = false; // prevent hover on moble
+var preventMenuOver = false; // prevent hover on desktop menu
 var pastWidth;
 var resizeTimer;
 
@@ -31,7 +32,7 @@ function page_delay(n) {
         setTimeout(() => {}, n);
     });
 };
-
+// init page transitions
 barba.init({
     transitions: [{
         name: 'page_transition',
@@ -43,7 +44,6 @@ barba.init({
             setTimeout(function() {
                 done();
             }, 1600);
-
             //done();
         },
         enter(data) {
@@ -72,8 +72,9 @@ barba.init({
     }]
 });
 
+// init scripts for pages 
 function initScipt() {
-    if ($('.timeline').length) {
+    if ($('.timeline').length) { //home page
 
         // ScrollMagic setup
         controller = new ScrollMagic.Controller();
@@ -237,7 +238,7 @@ function initScipt() {
                 .addTo(controller);
         });
     }
-    if ($('.people-background').length) {
+    if ($('.people-background').length) { //team page
         $('.portret a').click(function() {
             $('.profile').collapse('hide');
             $('.profile').each(function() {
@@ -304,20 +305,64 @@ function setLogos() {
 $(window).on('load', setLogos);
 
 $(document).ready(function() {
-    $('.menu-btn').on('click', function() {
+
+    // $('.menu-btn').on('click', function() {
+    //     if ($('.animated-icon1').hasClass('open')) {
+    //         $('.animated-icon1').removeClass('open');
+    //         $('.menu').removeClass('active');
+    //     } else {
+    //         $('.animated-icon1').addClass('open');
+    //         $('.menu').addClass('active');
+    //     }
+    // });
+
+    // init menu events 
+    function hasTouch() {
+        return 'ontouchstart' in document.documentElement ||
+            navigator.maxTouchPoints > 0 ||
+            navigator.msMaxTouchPoints > 0;
+    }
+    if (hasTouch()) {
+        $('.menu-btn').on('click', function(e) {
+            e.stopPropagation();
+            if ($('.animated-icon1').hasClass('open')) {
+                $('.animated-icon1').removeClass('open');
+                $('.menu').removeClass('active');
+            } else {
+                $('.animated-icon1').addClass('open');
+                $('.menu').addClass('active');
+            }
+        });
+    } else {
+        $('.menu-btn').on('mouseover', function() {
+            if (preventMenuOver) {
+                // preventMouseOver = false;
+                return;
+            }
+            $('.animated-icon1').addClass('open');
+            $('.menu').addClass('active');
+            preventMenuOver = true;
+
+        });
+    }
+    $('body').on('click', function(e) {
+
         if ($('.animated-icon1').hasClass('open')) {
             $('.animated-icon1').removeClass('open');
             $('.menu').removeClass('active');
-        } else {
-            $('.animated-icon1').addClass('open');
-            $('.menu').addClass('active');
-        };
+            $('.menu-btn').css('display', 'block');
+            preventMenuOver = true;
+            setTimeout(function() {
+                preventMenuOver = false;
+            }, 1500);
+        }
     });
     initScipt();
     setupPattern();
     pastWidth = $(window).width();
 });
 
+// get element for canvas
 function getCanvasWrapper() {
     var canvasWrapper = document.querySelector('.alive_opener');
     if (canvasWrapper) {
@@ -342,7 +387,7 @@ function getCanvasWrapper() {
     }
     return null;
 }
-
+// init pattern o the page
 function setupPattern() {
 
     var canvasWrap = getCanvasWrapper();
@@ -378,9 +423,9 @@ function setupPattern() {
         ctx.drawImage(img1, 0, 0);
         drawTimer = setInterval(drawPattern, 150);
     };
-    img1.src = 'http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/start.png';
+    img1.src = 'https://www.alivetextiles.com/wp-content/themes/alive/img/start.png';
 }
-
+// DRAW
 function drawPattern() {
     var canvasWrap = getCanvasWrapper();
     if (!canvasWrap) {
@@ -424,7 +469,7 @@ function drawPattern() {
 
     }
 }
-
+// get the position to draw next element
 function getPosition(pointArg, stepSize, pWidth, pHeight) {
     var pointResult = { posX: pointArg.posX, posY: pointArg.posY };
     var directionsArray = [

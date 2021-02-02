@@ -8,7 +8,7 @@ get_header(); ?>
 <main data-barba="container" data-barba-namespace="subscribe">
   <div class="static_opener_background" ></div>
   <div class="static_opener" id="opener_canvas"></div> 
-  <a href="http://localhost:8888/alive_textile/wordpress" class="home_link"></a>
+  <a href="https://www.alivetextiles.com/" class="home_link"></a>
   <div class="return_arrow"></div>
   <!-- <div class="container-fluid people-background">
     <div class="row background-subscribe-row">
@@ -34,8 +34,8 @@ get_header(); ?>
           our newsletter.
         </p>
         <div class="subscribe_icons">
-          <a href="https://www.facebook.com/studiosamiraboon/" target="_blank"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/facebook-square.png"/></a>
-          <a href="https://www.instagram.com/studiosamiraboon/" target="_blank"><img src="http://localhost:8888/alive_textile/wordpress/wp-content/themes/alive/img/instagram-square.png"/></a>
+          <a href="https://www.facebook.com/studiosamiraboon/" target="_blank"><img src="https://www.alivetextiles.com/wp-content/themes/alive/img/facebook-square.png"/></a>
+          <a href="https://www.instagram.com/studiosamiraboon/" target="_blank"><img src="https://www.alivetextiles.com/wp-content/themes/alive/img/instagram-square.png"/></a>
         </div>
       </div>
       <div class="subscribe_form_bg col-lg-9 col-md-8 col-sm-12 canvas_template">
