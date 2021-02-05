@@ -290,15 +290,35 @@ function initScipt() {
 }
 
 function setLogos() {
+    var narrow = false;
+    if (document.documentElement.clientWidth <= 576) {
+        narrow = true;
+    }
     $('.logo_image img').each(function() {
-        var destHeight = $(this).parents('.organization_row').find('.portret a img').first().height();
-        var destOffset = destHeight / 2 - $(this).height() / 2;
-        $(this).css('position', 'absolute');
-        $(this).css('top', destOffset + 'px');
+
         $(this).css('left', 5 + '%');
         var destCircle = $(this).parent().siblings('.team_dot').first();
-        destOffset = destHeight / 2;
-        destCircle.css('top', destOffset + 'px');
+        if (narrow) {
+            $(this).parent().parent().css('padding', '10px');
+            $(this).css('position', 'relative');
+            $(this).css('top', '50%');
+            $(this).css('transform', 'none');
+            destCircle.css('top', '50%');
+            destCircle.css('right', '0px');
+        } else {
+            var destBlock = $(this).parents('.organization_row').find('.portret a img').first();
+            if (!destBlock.length) {
+                destBlock = $(this).parents('.organization_row').find('.portret').first();
+            }
+            var destHeight = destBlock.height();
+            var destOffset = destHeight / 2 - $(this).height() / 2;
+            $(this).css('position', 'absolute');
+            $(this).css('top', destOffset + 'px');
+            $(this).css('transform ', 'none')
+            destOffset = destHeight / 2;
+            destCircle.css('top', destOffset + 'px');
+            destCircle.css('right', '-8px');
+        }
     });
 }
 

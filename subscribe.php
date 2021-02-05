@@ -59,6 +59,7 @@ get_header(); ?>
                     <label for="mce-LNAME">Last Name</label>
                     <input type="text" value="" name="LNAME" class="required" id="mce-LNAME">
                   </div>
+					<p class="disclamer">I have read the <a href="https://www.alivetextiles.com/privacy-policy/" target="_blank">Privacy Policy</a> and agree to the processing of my personal data.</p>
                   <div id="mce-responses" class="clear">
                     <div class="response" id="mce-error-response" style="display:none"></div>
                     <div class="response" id="mce-success-response" style="display:none"></div>

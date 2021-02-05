@@ -16,14 +16,16 @@ get_header(); ?>
         <div class="container-fluid inner_left">
           <div class="row">
             <div class="col-1"></div>
-            <div class="col-11 about_header">
+            <div class="col-md-11 col-sm-10 about_header">
               <h1>CONTACT</h1>
             </div>
+ 			<div class="col-1 d-block d-sm-block d-md-none d-lg-none"></div>
           </div>
           <div class="row map_row justify-content-center">
-            <div class="col-md-12 col-sm-7 col-10 map_col">
+			<div class="col-1 d-none d-sm-none d-md-block"></div>
+            <div class="col-md-11 col-sm-10 col-12 map_col">
             <a href="https://goo.gl/maps/LUJPyYYhS2GCYCyt6" target="_blank">
-              <img src="https://www.alivetextiles.com/wp-content/themes/alive/img/snazzy-image-01.png"/>
+			  <img src="https://www.alivetextiles.com/wp-content/uploads/2021/02/map-01.png"/>
             </a>
             </div>
           </div>
@@ -44,6 +46,9 @@ get_header(); ?>
               1019 bm Amsterdam<br>
               m +31 (0)6 37172 862<br>
               <a href="https://samiraboon.com/" target="_blank">www.samiraboon.com</a>
+            </p>
+			<p>
+              <a href="https://www.alivetextiles.com/privacy-policy/" target="_blank">privacy policy &nbsp;<i class="fas fa-arrow-right"></i></a>
             </p>
           </div>
           <div class="col-md-12 col-sm-10 col-10 subscribe_icons">

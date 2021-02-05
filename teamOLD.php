@@ -57,7 +57,7 @@ get_header(); ?>
     <div class="team_dot"></div>
   </div>
 
-  <div style="padding:0;" class="col-md-9 col-sm-7 col-12">
+  <div class="col-md-9 col-sm-7 col-12">
     <div class="container accordion_container" >
     <div class = "row portret_row">
 
@@ -77,7 +77,7 @@ get_header(); ?>
     </a>
     <?php } ?>
     </div>
-    <?php $profile .= '<div class=" justify-content-end profile collapse col-12"  id = "' . str_replace(' ', '', get_sub_field('name')) . '"><div class="descr col-lg-8 col-md-10 col-sm-12">' . get_sub_field('description') . '</div></div>'; ?>
+    <?php $profile .= '<div class=" justify-content-end profile collapse col-12"  id = "' . str_replace(' ', '', get_sub_field('name')) . '"><div class="descr col-md-8 col-sm-10">' . get_sub_field('description') . '</div></div>'; ?>
 
   <?php endwhile;?>
 </div>

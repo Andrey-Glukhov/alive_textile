@@ -1166,7 +1166,14 @@ about
     height: 100vh;
     z-index: -1;
 }
-
+.about_mail_link{
+	font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #ffffff;
+	text-decoration:underline;
+	cursor:pointer;
+}
 
 /*--------------------------------------------------------------
 contact
@@ -1182,7 +1189,7 @@ contact
 }
 
 .map_col>a>img {
-    width: 50%;
+    width: 100%;
     height: auto;
 }
 
@@ -1245,6 +1252,7 @@ team
 }
 
 .profile {
+	padding:0;
     position: relative;
     z-index: 2;
 }
@@ -1253,7 +1261,10 @@ team
     padding: 25px 0;
 }
 
-
+.portret>a>p.profession_light{
+	font-weight:400 !important;
+	font-size:0.8rem;
+}
 /* .studio_samira_boon{
   background-image: url(https://www.alivetextiles.com/wp-content/uploads/2020/12/samira-01-1.png);
   background-size: contain;
@@ -1301,6 +1312,7 @@ team
 }
 
 .descr>p {
+	padding-top: 25px;
     padding-right: 40px;
     font-family: 'Bitter', serif;
     font-size: 1rem;
@@ -1309,23 +1321,19 @@ team
 }
 
 .portret>a>p {
-    opacity: 0;
     font-family: 'Bitter', serif;
     font-size: 1rem;
     font-weight: 700;
     color: #485E1E;
     text-decoration: none;
     text-align: center;
+	margin-bottom: 5px;
 }
 
 .portret>a {
     text-decoration: none;
 }
 
-.portret>a>img:hover+p {
-    opacity: 1;
-    text-decoration: none;
-}
 
 .team_header {
     padding-left: 0;
@@ -1471,8 +1479,19 @@ div.mc-field-group {
     margin: 13px 0 25px 0;
     border-bottom: 1.5px solid #ffffff;
 }
-
-
+.disclamer{
+	 font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #485E1E;
+}
+.disclamer>a{
+	font-family: 'Bitter', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: #485E1E;
+	text-decoration:underline;
+}
 /*--------------------------------------------------------------
 publications
 --------------------------------------------------------------*/
@@ -1550,12 +1569,14 @@ publications
         font-size: 1.4rem;
     }
     .descr {
-        padding: 45px 35px;
-        background: rgb(196, 255, 0);
-        background: linear-gradient(0deg, rgba(196, 255, 0, 0) 0%, rgba(196, 255, 0, 1) 5%, rgba(196, 255, 0, 1) 50%, rgba(196, 255, 0, 1) 95%, rgba(196, 255, 0, 0) 100%);
+        padding: 5px 35px;
+        background: rgb(210,194,176);
+background: linear-gradient(180deg, rgba(210,194,176,0) 0%, rgba(210,194,176,1) 8%, rgba(210,194,176,1) 50%, rgba(210,194,176,1) 92%, rgba(210,194,176,0) 100%);
     }
     .descr>p {
         padding-right: 0;
+		padding-top:40px;
+		padding-bottom:40px;
     }
     /* .subscribe_page {
         margin-top: 50px;
@@ -1642,6 +1663,15 @@ publications
 	.column_event_notice>p{
 		margin:30px 0 0 0;
 	}
+	.about_header{
+	padding-right:15px;	
+	}
+	.team_dot{
+		display:none;
+	}
+	.portret_row>.portret{
+		padding:40px 40px 5px 40px;
+	}
 }
 
 
@@ -1683,7 +1713,6 @@ publications
     }
     .about_header>h1 {
         font-size: 3rem;
-        margin-right: 50px;
     }
     .team_header>h1 {
         font-size: 3rem;
@@ -1713,8 +1742,8 @@ publications
         height: 100%;
     }
     .descr>p {
-        padding-right: 15px;
-        padding-left: 15px;
+        padding-right: 0px;
+        padding-left: 0px;
     }
     .subscribe_form_bg {
         /* background-color: rgb(196, 255, 0); */
@@ -1818,6 +1847,9 @@ publications
 	.column_event_notice>p{
 		margin:30px 0 0 0;
 	}
+  .about_header{
+	padding-right:15px;	
+	}
 }
 
 
@@ -1857,7 +1889,7 @@ publications
         height: 100vh;
     }
     .map_col>a>img {
-        width: 80%;
+        width: 100%;
     }
     .event_img>img {
         width: 90%;
